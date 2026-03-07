@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pankaj_portfolio/core/responsive/responsive_extensions.dart';
+import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/sections/footer/widgets/footer_brand.dart';
 import 'package:pankaj_portfolio/sections/footer/widgets/footer_links.dart';
 import 'package:pankaj_portfolio/sections/footer/widgets/footer_social.dart';

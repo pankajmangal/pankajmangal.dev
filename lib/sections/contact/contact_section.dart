@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pankaj_portfolio/core/colors.dart';
+import 'package:pankaj_portfolio/core/utils/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/responsive/breakpoints.dart';
-import 'package:pankaj_portfolio/core/responsive/responsive_extensions.dart';
+import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/sections/contact/widgets/contact_form.dart';
 import 'package:pankaj_portfolio/sections/contact/widgets/contact_info.dart';
 

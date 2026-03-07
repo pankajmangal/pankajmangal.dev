@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pankaj_portfolio/core/colors.dart';
+import 'package:pankaj_portfolio/core/utils/colors.dart';
 
 class ContactForm extends StatelessWidget {
   const ContactForm({super.key});

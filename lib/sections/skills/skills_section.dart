@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pankaj_portfolio/core/colors.dart';
-import 'package:pankaj_portfolio/core/responsive/responsive_extensions.dart';
+import 'package:pankaj_portfolio/core/utils/colors.dart';
+import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/sections/skills/skill_card.dart';
 import 'package:pankaj_portfolio/sections/skills/skill_model.dart';
 

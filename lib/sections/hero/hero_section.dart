@@ -1,148 +1,246 @@
 import 'package:flutter/material.dart';
-import 'package:pankaj_portfolio/core/colors.dart';
-import 'package:pankaj_portfolio/core/text_styles.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HeroSection extends StatelessWidget {
+class HeroSection extends StatefulWidget {
   const HeroSection({super.key});
 
   @override
+  State<HeroSection> createState() => _HeroSectionState();
+}
+
+class _HeroSectionState extends State<HeroSection>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 900),
+    )..repeat(reverse: true);
+
+    _animation = Tween<double>(begin: 0, end: 12).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 100),
-      height: 700,
-      child: Row(
+      height: MediaQuery.of(context).size.height,
+      padding: const EdgeInsets.symmetric(horizontal: 80),
+      color: const Color(0xFFF6F7FB),
+      child: Column(
         children: [
-          /// LEFT CONTENT
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-
-                /// Badge
-                Container(
-                  padding:
-                  const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: AppColors.badgeBg,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Text(
-                    "Flutter Developer",
-                    style: AppTextStyles.subtitle.copyWith(
-                      color: AppColors.primary,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: 30),
-
-                /// Title
-                RichText(
-                  text: TextSpan(
-                    style: AppTextStyles.title,
-                    children: [
-                      const TextSpan(text: "Hi, I'm "),
-                      TextSpan(
-                        text: "Pankaj Mangal",
-                        style: TextStyle(color: AppColors.primary),
-                      ),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: 10),
-
-                Text(
-                  "Building Beautiful Mobile Apps",
-                  style: AppTextStyles.subtitle.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.darkText,
-                  ),
-                ),
-
-                const SizedBox(height: 20),
-
-                SizedBox(
-                  width: 500,
-                  child: Text(
-                    "Passionate Flutter developer specializing in creating high-performance, cross-platform mobile applications with elegant UI/UX design.",
-                    style: AppTextStyles.description,
-                  ),
-                ),
-
-                const SizedBox(height: 40),
-
-                /// Buttons
-                Row(
-                  children: [
-
-                    /// Primary Button
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.primary,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 28, vertical: 18),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        "View Projects",
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ),
-
-                    const SizedBox(width: 20),
-
-                    /// Outline Button
-                    OutlinedButton(
-                      style: OutlinedButton.styleFrom(
-                        side: BorderSide(color: AppColors.primary, width: 2),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 28, vertical: 18),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: Text(
-                        "Contact Me",
-                        style: TextStyle(
-                          color: AppColors.primary,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+          const Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(child: _leftContent()),
+              const SizedBox(width: 60),
+              Expanded(child: _profileImage()),
+            ],
           ),
+          const Spacer(),
 
-          /// RIGHT IMAGE
-          Expanded(
-            child: Center(
-              child: Container(
-                width: 400,
-                height: 400,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Colors.white, width: 10),
-                  image: const DecorationImage(
-                    image: AssetImage("assets/profile.png"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          _scrollIndicator(),
+
+          const SizedBox(height: 30),
         ],
       ),
+    );
+  }
+
+  Widget _leftContent() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        /// BADGE
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
+          decoration: BoxDecoration(
+            color: const Color(0xFFE0E7FF),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Text(
+            "Flutter Developer",
+            style: GoogleFonts.inter(
+              color: const Color(0xFF2563EB),
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+
+        const SizedBox(height: 30),
+
+        /// NAME
+        Text(
+          "Hi, I'm Pankaj Mangal",
+          style: GoogleFonts.inter(
+            fontSize: 42,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+
+        const SizedBox(height: 10),
+
+        /// TYPEWRITER TEXT
+        AnimatedTextKit(
+          repeatForever: true,
+          animatedTexts: [
+            TypewriterAnimatedText(
+              "Building Beautiful Mobile Apps",
+              speed: const Duration(milliseconds: 50),
+              textStyle: GoogleFonts.inter(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            TypewriterAnimatedText(
+              "Flutter • Clean Architecture • Scalable Apps",
+              speed: const Duration(milliseconds: 50),
+              textStyle: GoogleFonts.inter(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+
+        const SizedBox(height: 30),
+
+        /// DESCRIPTION
+        SizedBox(
+          width: 520,
+          child: Text(
+            "Passionate Flutter developer specializing in high-performance, scalable cross-platform applications with elegant UI and clean architecture.",
+            style: GoogleFonts.inter(
+              fontSize: 16,
+              color: Colors.grey[600],
+              height: 1.7,
+            ),
+          ),
+        ),
+
+        const SizedBox(height: 40),
+
+        /// BUTTONS
+        Row(
+          children: [
+            _primaryButton("View Projects"),
+            const SizedBox(width: 20),
+            _outlineButton("Contact Me"),
+          ],
+        ),
+
+        const SizedBox(height: 30),
+
+        /// SOCIAL ICONS
+        Row(
+          children: [
+            _socialIcon(FontAwesomeIcons.github),
+            _socialIcon(FontAwesomeIcons.linkedin),
+            _socialIcon(FontAwesomeIcons.envelope),
+          ],
+        )
+      ],
+    );
+  }
+
+  Widget _profileImage() {
+    return Center(
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          return Container(
+            padding: const EdgeInsets.all(6),
+            width: 360,
+            height: 360,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.blue.withOpacity(.25),
+                  blurRadius: 40 * _controller.value,
+                  spreadRadius: 10 * _controller.value,
+                )
+              ],
+              image: const DecorationImage(
+                image: AssetImage("assets/profile.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _primaryButton(String text) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xFF2563EB),
+        padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 20),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      ),
+      onPressed: () {},
+      child: Text(text),
+    );
+  }
+
+  Widget _outlineButton(String text) {
+    return OutlinedButton(
+      style: OutlinedButton.styleFrom(
+        side: const BorderSide(color: Color(0xFF2563EB)),
+        padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 20),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      ),
+      onPressed: () {},
+      child: const Text(
+        "Contact Me",
+        style: TextStyle(color: Color(0xFF2563EB)),
+      ),
+    );
+  }
+
+  Widget _socialIcon(IconData icon) {
+    return Container(
+      margin: const EdgeInsets.only(right: 14),
+      width: 46,
+      height: 46,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(.1),
+            blurRadius: 8,
+          )
+        ],
+      ),
+      child: Icon(icon, size: 18),
+    );
+  }
+
+  Widget _scrollIndicator() {
+    return AnimatedBuilder(
+      animation: _animation,
+      builder: (context, child) {
+        return Transform.translate(
+          offset: Offset(0, _animation.value),
+          child: const Icon(
+            Icons.keyboard_arrow_down,
+            size: 32,
+            color: Colors.grey,
+          ),
+        );
+      },
     );
   }
 }

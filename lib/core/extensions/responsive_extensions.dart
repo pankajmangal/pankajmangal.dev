@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'breakpoints.dart';
+import '../responsive/breakpoints.dart';
 
 extension ResponsiveExtension on BuildContext {
 
@@ -9,10 +9,10 @@ extension ResponsiveExtension on BuildContext {
 
   bool get isTablet =>
       width >= Breakpoints.mobile &&
-          width < Breakpoints.desktop;
+          width < Breakpoints.tablet;
 
   bool get isDesktop =>
-      width >= Breakpoints.desktop;
+      width >= Breakpoints.tablet;
 
   double get horizontalPadding {
     if (isDesktop) return 100;

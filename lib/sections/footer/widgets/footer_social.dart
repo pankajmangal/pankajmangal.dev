@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/sections/footer/widgets/social_icon.dart';
-import 'package:pankaj_portfolio/utils/resources/social_links.dart';
+import 'package:pankaj_portfolio/core/utils/social_links.dart';
 
 class FooterSocial extends StatelessWidget {
 
