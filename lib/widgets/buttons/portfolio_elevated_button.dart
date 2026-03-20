@@ -13,7 +13,7 @@ class PortfolioElevatedButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
-        elevation: 0,
+        elevation: 2,
         padding: const EdgeInsets.symmetric(horizontal: Dimens.padding34, vertical: Dimens.padding20),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimens.circularRadius12)),
       ),

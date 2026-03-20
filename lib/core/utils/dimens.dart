@@ -38,6 +38,7 @@ class Dimens {
   static const fontSize24 = 24.0;
   static const fontSize28 = 28.0;
   static const fontSize32 = 32.0;
+  static const fontSize34 = 34.0;
   static const fontSize36 = 36.0;
   static const fontSize40 = 40.0;
   static const fontSize42 = 42.0;
@@ -57,6 +58,7 @@ class Dimens {
   static const padding16 = 16.0;
   static const padding18 = 18.0;
   static const padding20 = 20.0;
+  static const padding22 = 22.0;
   static const padding24 = 24.0;
   static const padding28 = 28.0;
   static const padding32 = 32.0;

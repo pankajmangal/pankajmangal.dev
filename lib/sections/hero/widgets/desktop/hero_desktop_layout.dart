@@ -1,6 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
@@ -11,6 +10,7 @@ import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_elevated_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_outline_button.dart';
 import 'package:pankaj_portfolio/widgets/icons/portfolio_social_icon.dart';
+import 'package:pankaj_portfolio/widgets/indicator/scroll_indicator.dart';
 
 class HeroDesktopLayout extends StatelessWidget {
   const HeroDesktopLayout({super.key, required this.controller, required this.animation});
@@ -27,24 +27,23 @@ class HeroDesktopLayout extends StatelessWidget {
         horizontal: 80,
       ),
       color: AppColors.lightWhite,
-      child: Column(
-        children: [
-          const Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(child: _leftContent()),
-              const SizedBox(width: 60),
-              Expanded(child: _profileImage()),
-            ],
-          ),
-
-          // const Spacer(),
-
-          _scrollIndicator(),
-
-          const SizedBox(height: 20),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(height: 60),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(child: _leftContent()),
+                const SizedBox(width: 60),
+                Expanded(child: _profileImage()),
+              ],
+            ),
+            const SizedBox(height: 40),
+            ScrollIndicator(onTap: () => ScrollManager.scrollTo(ScrollManager.aboutKey)),
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }
@@ -54,7 +53,6 @@ class HeroDesktopLayout extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        /// BADGE
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
           decoration: BoxDecoration(
@@ -69,10 +67,7 @@ class HeroDesktopLayout extends StatelessWidget {
             ),
           ),
         ),
-
         const SizedBox(height: 30),
-
-        /// NAME
         Text(
           Strings.greetingText,
           textAlign: TextAlign.start,
@@ -81,10 +76,7 @@ class HeroDesktopLayout extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-
         const SizedBox(height: 10),
-
-        /// TYPEWRITER TEXT
         AnimatedTextKit(
           repeatForever: true,
           animatedTexts: [
@@ -122,14 +114,12 @@ class HeroDesktopLayout extends StatelessWidget {
             ),
           ],
         ),
-
-        const SizedBox(height: 30),
-
-        /// DESCRIPTION
+        const SizedBox(height: 20),
         SizedBox(
           width: 520,
           child: Text(
             Strings.heroProfileContent,
+            textAlign: TextAlign.start,
             style: GoogleFonts.inter(
               fontSize: Dimens.fontSize16,
               color: Colors.grey[600],
@@ -137,30 +127,26 @@ class HeroDesktopLayout extends StatelessWidget {
             ),
           ),
         ),
-
-        const SizedBox(height: 40),
-
-        /// BUTTONS
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+        const SizedBox(height: 30),
+        Wrap(
+          alignment: WrapAlignment.start,
+          spacing: 16,
+          runSpacing: 12,
           children: [
-            PortfolioElevatedButton(text: Strings.viewProjects),
-            const SizedBox(width: 20),
+            PortfolioElevatedButton(text: Strings.viewProjects, onPressed: (){},),
             PortfolioOutlineButton(text: Strings.contactMe, onPressed: (){},),
           ],
         ),
-
         const SizedBox(height: 30),
-
-        /// SOCIAL ICONS
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+        Wrap(
+          alignment: WrapAlignment.start,
+          spacing: 12,
           children: [
             PortfolioSocialIcon(assetPath: ImagePaths.github),
             PortfolioSocialIcon(assetPath: ImagePaths.linkedin),
             PortfolioSocialIcon(assetPath: ImagePaths.mail),
           ],
-        )
+        ),
       ],
     );
   }
@@ -193,20 +179,6 @@ class HeroDesktopLayout extends StatelessWidget {
           );
         },
       ),
-    );
-  }
-
-  Widget _scrollIndicator() {
-    return AnimatedBuilder(
-      animation: animation,
-      builder: (context, child) {
-        return Transform.translate(
-          offset: Offset(0, animation.value),
-          child: SvgPicture.asset(
-            ImagePaths.downArrow,
-          ),
-        );
-      },
     );
   }
 }

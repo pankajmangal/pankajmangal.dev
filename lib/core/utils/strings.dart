@@ -2,6 +2,20 @@ class Strings {
 
   //A
   static const about = 'About';
+  static const aboutMe = 'About Me';
+  static const aboutHeading = '"Senior Flutter Engineer | 500K+ Users | Clean Architecture | Performance Driven"';
+  static const aboutText1 = 'I\'m a Senior Flutter Engineer with 8+ years of experience in mobile development, including 5+ years specializing in Flutter. I build scalable, high-performance applications across Android, iOS, and Web using clean architecture and modern engineering practices.';
+  static const aboutText2 = 'I specialize in designing modular, maintainable systems using BLoC, Riverpod, and MVVM, with strong expertise in REST/GraphQL integrations, performance optimization, and building responsive, production-ready user interfaces.';
+  static const aboutText3 = 'I have delivered applications with 500K+ users, improved app performance and stability, and reduced crash rates significantly. I enjoy solving complex engineering problems, optimizing user experiences, and collaborating with cross-functional teams to ship impactful products.';
+  static const aboutText4 = 'Beyond development, I actively leverage AI-assisted tools to improve productivity, refactor codebases, and maintain high engineering standards. I’m passionate about continuous learning and building software that creates real-world impact.';
+  static const aboutCardTitle1 = 'Scalable Architecture';
+  static const aboutCardDesc1 = 'Designing modular apps using Clean Architecture, BLoC & MVVM';
+  static const aboutCardTitle2 = 'Cross-Platform Expertise';
+  static const aboutCardDesc2 = 'Building high-performance apps for Android, iOS & Web';
+  static const aboutCardTitle3 = 'Performance Optimization';
+  static const aboutCardDesc3 = 'Achieving smooth 60FPS UI & reducing crashes in production';
+  static const aboutCardTitle4 = 'Product Thinking';
+  static const aboutCardDesc4 = 'Improving UX, engagement & business metrics with data-driven decisions';
   static const animatedText1 = 'Scalable Mobile Architectures';
   static const animatedText2 = 'High-Performance Flutter Apps';
   static const animatedText3 = 'Cross-Platform Product Engineering';

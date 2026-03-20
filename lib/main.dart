@@ -8,7 +8,7 @@ import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/about/about_us_section.dart';
 import 'package:pankaj_portfolio/sections/contact/contact_section.dart';
 import 'package:pankaj_portfolio/sections/footer/footer_section.dart';
-import 'package:pankaj_portfolio/sections/hero/portfolio_appbar.dart';
+import 'package:pankaj_portfolio/sections/menu/portfolio_appbar.dart';
 import 'package:pankaj_portfolio/sections/skills/skills_section.dart';
 import 'package:pankaj_portfolio/widgets/items/nav_item.dart';
 import 'core/theme/theme_bloc.dart';
