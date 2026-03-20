@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pankaj_portfolio/core/utils/colors.dart' show AppColors;
+import 'package:pankaj_portfolio/core/utils/app_colors.dart' show AppColors;
 import 'package:pankaj_portfolio/core/utils/text_styles.dart';
 
 class Navbar extends StatelessWidget {

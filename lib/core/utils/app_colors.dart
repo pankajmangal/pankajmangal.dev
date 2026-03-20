@@ -6,4 +6,9 @@ class AppColors {
   static const lightText = Color(0xFF6B7280);
   static const background = Color(0xFFF3F4F6);
   static const badgeBg = Color(0xFFDBEAFE);
+  static const lightWhite = Color(0xFFF6F7FB);
+
+  static const whiteColor = Color(0xFFFFFFFF);
+  static const blackColor = Color(0xFF000000);
+  static const greyColor = Color(0xFF707070);
 }

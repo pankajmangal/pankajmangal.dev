@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pankaj_portfolio/core/utils/dimens.dart';
 
 class ScrollManager {
   static final controller = ScrollController();
@@ -12,10 +11,16 @@ class ScrollManager {
   static final contactKey = GlobalKey();
 
   static void scrollTo(GlobalKey key) {
-    Scrollable.ensureVisible(
-      key.currentContext!,
-      duration: const Duration(milliseconds: Dimens.duration600ms),
-      curve: Curves.easeInOut,
-    );
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final context = key.currentContext;
+
+      if (context == null) return;
+
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 700),
+        curve: Curves.easeInOut,
+      );
+    });
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pankaj_portfolio/core/utils/colors.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});

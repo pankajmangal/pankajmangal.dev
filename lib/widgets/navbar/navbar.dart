@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pankaj_portfolio/core/utils/colors.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/widgets/items/nav_item.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pankaj_portfolio/core/utils/colors.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/responsive/breakpoints.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';

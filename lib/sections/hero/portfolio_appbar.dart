@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
-import 'package:pankaj_portfolio/core/utils/colors.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
-import 'package:pankaj_portfolio/design_system/components/theme_toggle.dart';
 import 'package:pankaj_portfolio/widgets/items/nav_item.dart';
 
 class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -68,7 +67,7 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
                       onTap: () =>
                           ScrollManager.scrollTo(ScrollManager.contactKey),
                     ),
-                    ThemeToggle(),
+                    // ThemeToggle(),
                   ],
                 ),
               ),

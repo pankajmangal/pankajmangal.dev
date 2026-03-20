@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 
 class AppTheme {
   static final lightTheme = ThemeData(
@@ -8,6 +9,11 @@ class AppTheme {
       secondary: Color(0xFF9333EA),
       surface: Colors.white,
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: AppColors.primary,
+        surfaceTintColor: AppColors.primary,
+      )),
     scaffoldBackgroundColor: Colors.white,
     textTheme: const TextTheme(
       bodyLarge: TextStyle(color: Colors.black),
