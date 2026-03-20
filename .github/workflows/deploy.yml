@@ -25,7 +25,14 @@ jobs:
         run: flutter pub get
 
       - name: Build web
-        run: flutter build web --release
+        run: flutter build web --release --base-href "/pankajmangal.dev/"
+
+      - name: Cache Flutter
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pub-cache
+          key: ${{ runner.os }}-pub-cache
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
