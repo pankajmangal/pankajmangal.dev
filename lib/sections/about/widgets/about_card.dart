@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 
 class AboutCard extends StatefulWidget {
   final String title;
   final String description;
-  final IconData icon;
+  final String icon;
 
   const AboutCard({
     super.key,
@@ -71,10 +72,10 @@ class _AboutCardState extends State<AboutCard> {
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Icon(
+          child: SvgPicture.asset(
             widget.icon,
-            color: const Color(0xFF2563EB),
-            size: 26,
+            colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
+            width: 26, height: 26,
           ),
         ),
         const SizedBox(height: 16),

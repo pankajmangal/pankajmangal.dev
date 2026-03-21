@@ -89,12 +89,12 @@ class AboutMobileLayout extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: 4,
+      itemCount: items.length,
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 360,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
-        mainAxisExtent: 200,
+        mainAxisExtent: 240,
       ),
       itemBuilder: (context, index) {
         final item = items[index];

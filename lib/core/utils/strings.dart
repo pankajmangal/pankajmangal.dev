@@ -14,8 +14,16 @@ class Strings {
   static const aboutCardDesc2 = 'Building high-performance apps for Android, iOS & Web';
   static const aboutCardTitle3 = 'Performance Optimization';
   static const aboutCardDesc3 = 'Achieving smooth 60FPS UI & reducing crashes in production';
-  static const aboutCardTitle4 = 'Product Thinking';
-  static const aboutCardDesc4 = 'Improving UX, engagement & business metrics with data-driven decisions';
+  static const aboutCardTitle4 = 'State Management';
+  static const aboutCardDesc4 = 'BLoC, Riverpod, Provider & GetX with clean architecture patterns';
+  static const aboutCardTitle5 = 'API & Backend Integration';
+  static const aboutCardDesc5 = 'REST, GraphQL, Firebase & secure API communication';
+  static const aboutCardTitle6 = 'Product Thinking';
+  static const aboutCardDesc6 = 'Improving UX, engagement & business metrics with data-driven decisions';
+  static const aboutCardTitle7 = 'CI/CD & Automation';
+  static const aboutCardDesc7 = 'GitHub Actions, Fastlane & automated deployment pipelines';
+  static const aboutCardTitle8 = 'Passionate';
+  static const aboutCardDesc8 = 'Deeply passionate about mobile app development';
   static const animatedText1 = 'Scalable Mobile Architectures';
   static const animatedText2 = 'High-Performance Flutter Apps';
   static const animatedText3 = 'Cross-Platform Product Engineering';
@@ -47,6 +55,9 @@ class Strings {
 
   //S
   static const skills = 'Skills';
+  static const scrollToExplore = 'Scroll to explore';
+  static const skillAndExpertise = 'Skills & Expertise';
+  static const skillDescription = 'Comprehensive toolkit for building scalable Flutter applications';
   static const seniorFlutterEngineer = 'Senior Flutter Engineer';
 
   //V

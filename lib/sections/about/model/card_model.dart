@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
-
 class CardData {
   final String title;
   final String desc;
-  final IconData icon;
+  final String icon;
 
   CardData(this.title, this.desc, this.icon);
 }
