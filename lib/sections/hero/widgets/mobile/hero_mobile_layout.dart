@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
+import 'package:pankaj_portfolio/core/utils/app_constants.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
+import 'package:pankaj_portfolio/core/utils/social_links.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_elevated_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_outline_button.dart';
-import 'package:pankaj_portfolio/widgets/icons/portfolio_social_icon.dart';
+import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
 import 'package:pankaj_portfolio/widgets/indicator/scroll_indicator.dart';
 
 class HeroMobileLayout extends StatelessWidget {
@@ -150,9 +152,9 @@ class HeroMobileLayout extends StatelessWidget {
           alignment: WrapAlignment.center,
           spacing: 12,
           children: [
-            PortfolioSocialIcon(assetPath: ImagePaths.github),
-            PortfolioSocialIcon(assetPath: ImagePaths.linkedin),
-            PortfolioSocialIcon(assetPath: ImagePaths.mail),
+            PortfolioSocialButton(iconPath: ImagePaths.github, onTap: () => openLink(SocialLinks.githubLink)),
+            PortfolioSocialButton(iconPath: ImagePaths.linkedin, onTap: () => openLink(SocialLinks.linkedinLink)),
+            PortfolioSocialButton(iconPath: ImagePaths.mail, onTap: () => openLink(SocialLinks.emailLink)),
           ],
         ),
       ],

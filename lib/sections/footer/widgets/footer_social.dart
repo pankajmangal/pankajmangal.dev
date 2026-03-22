@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pankaj_portfolio/sections/footer/widgets/social_icon.dart';
+import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/social_links.dart';
+import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
 
 class FooterSocial extends StatelessWidget {
 
@@ -24,33 +25,15 @@ class FooterSocial extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20),
-        Row(
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: 12,
           children: [
-            SocialIcon(
-              Icons.code,
-              SocialLinks.githubLink,
-              openLink,
-            ),
-            const SizedBox(width: 16),
-            SocialIcon(
-              Icons.business,
-              SocialLinks.linkedinLink,
-              openLink,
-            ),
-            const SizedBox(width: 16),
-            SocialIcon(
-              Icons.alternate_email,
-              SocialLinks.twitterLink,
-              openLink,
-            ),
-            const SizedBox(width: 16),
-            SocialIcon(
-              Icons.email,
-              SocialLinks.emailLink,
-              openLink,
-            ),
+            PortfolioSocialButton(iconPath: ImagePaths.github, onTap: () => openLink(SocialLinks.githubLink)),
+            PortfolioSocialButton(iconPath: ImagePaths.linkedin, onTap: () => openLink(SocialLinks.linkedinLink)),
+            PortfolioSocialButton(iconPath: ImagePaths.mail, onTap: () => openLink(SocialLinks.emailLink)),
           ],
-        )
+        ),
       ],
     );
   }

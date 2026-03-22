@@ -7,6 +7,7 @@ import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/about/about_us_section.dart';
 import 'package:pankaj_portfolio/sections/contact/contact_section.dart';
+import 'package:pankaj_portfolio/sections/experiences/experience_section.dart';
 import 'package:pankaj_portfolio/sections/footer/footer_section.dart';
 import 'package:pankaj_portfolio/sections/menu/portfolio_appbar.dart';
 import 'package:pankaj_portfolio/sections/skills/skills_section.dart';
@@ -91,36 +92,46 @@ class HomePage extends StatelessWidget {
               NavItem(
                 title: Strings.about,
                 fontSize: Dimens.fontSize18,
-                onTap: () =>
-                    ScrollManager.scrollTo(ScrollManager.aboutKey),
+                onTap: () {
+                  ScrollManager.scrollTo(ScrollManager.aboutKey);
+                  Navigator.pop(context);
+                },
               ),
               SizedBox(height: 24),
               NavItem(
                 title: Strings.skills,
                 fontSize: Dimens.fontSize18,
-                onTap: () =>
-                    ScrollManager.scrollTo(ScrollManager.skillsKey),
+                onTap: () {
+                  ScrollManager.scrollTo(ScrollManager.skillsKey);
+                  Navigator.pop(context);
+                },
               ),
               SizedBox(height: 24),
               NavItem(
                 title: Strings.experiences,
                 fontSize: Dimens.fontSize18,
-                onTap: () =>
-                    ScrollManager.scrollTo(ScrollManager.experiencesKey),
+                onTap: () {
+                  ScrollManager.scrollTo(ScrollManager.experiencesKey);
+                  Navigator.pop(context);
+                },
               ),
               SizedBox(height: 24),
               NavItem(
                 title: Strings.projects,
                 fontSize: Dimens.fontSize18,
-                onTap: () =>
-                    ScrollManager.scrollTo(ScrollManager.projectsKey),
+                onTap: () {
+                  ScrollManager.scrollTo(ScrollManager.projectsKey);
+                  Navigator.pop(context);
+                },
               ),
               SizedBox(height: 24),
               NavItem(
                 title: Strings.contact,
                 fontSize: Dimens.fontSize18,
-                onTap: () =>
-                    ScrollManager.scrollTo(ScrollManager.contactKey),
+                onTap: () {
+                  ScrollManager.scrollTo(ScrollManager.contactKey);
+                  Navigator.pop(context);
+                },
               ),
             ],
           ),
@@ -133,6 +144,7 @@ class HomePage extends StatelessWidget {
             HeroSection(),
             AboutSection(),
             SkillsSection(),
+            ExperienceSection(),
             ContactSection(),
             FooterSection(),
             // HighlightsSection(),

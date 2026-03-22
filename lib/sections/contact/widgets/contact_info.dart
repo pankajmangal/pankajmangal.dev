@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
+import 'package:pankaj_portfolio/core/utils/dimens.dart';
 
 class ContactInfo extends StatelessWidget {
   const ContactInfo({super.key});
@@ -26,14 +27,14 @@ class ContactInfo extends StatelessWidget {
               Text(
                 title,
                 style: GoogleFonts.inter(
-                  fontSize: 18,
+                  fontSize: Dimens.fontSize18,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
                 value,
                 style: GoogleFonts.inter(
-                  fontSize: 16,
+                  fontSize: Dimens.fontSize16,
                   color: AppColors.lightText,
                 ),
               ),
@@ -51,9 +52,9 @@ class ContactInfo extends StatelessWidget {
       children: [
 
         Text(
-          "Contact Information",
+          'Contact Information',
           style: GoogleFonts.inter(
-            fontSize: 22,
+            fontSize: Dimens.fontSize22,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -61,17 +62,14 @@ class ContactInfo extends StatelessWidget {
         const SizedBox(height: 30),
 
         infoItem(Icons.email_outlined,
-            "Email", "mangal.pankaj5@gmail.com"),
+            'Email', 'mangal.pankaj5@gmail.com'),
 
         infoItem(Icons.phone_outlined,
-            "Phone", "+91 8920547478"),
+            'Phone', '+91 8920547478'),
 
         infoItem(Icons.location_on_outlined,
-            "Location", "Gurugram (Haryana), IN"),
-
+            'Location', 'Gurugram, India (Open to Remote)'),
         const SizedBox(height: 30),
-
-        /// WHY WORK WITH ME CARD
         Container(
           padding: const EdgeInsets.all(30),
           decoration: BoxDecoration(
@@ -81,21 +79,20 @@ class ContactInfo extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               Text(
-                "Why Work With Me?",
+                'Why Work With Me?',
                 style: GoogleFonts.inter(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
               const SizedBox(height: 20),
-
-              buildBullet("5+ years of Flutter development experience"),
-              buildBullet("Clean, maintainable, and well-documented code"),
-              buildBullet("On-time delivery and excellent communication"),
-              buildBullet("Post-launch support and maintenance"),
+              buildBullet('8+ years mobile development experience (5+ years Flutter)'),
+              buildBullet('Clean architecture, scalable and maintainable codebases'),
+              buildBullet('Performance optimization and crash reduction expertise'),
+              buildBullet('CI/CD automation and production release management'),
+              buildBullet('Cross-platform delivery (Android, iOS, Web)'),
+              buildBullet('Strong collaboration with product & backend teams'),
             ],
           ),
         )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/footer/footer_section.dart';
 
 class FooterBrand extends StatelessWidget {
@@ -15,7 +16,7 @@ class FooterBrand extends StatelessWidget {
         children: [
 
           Text(
-            "<FlutterDev />",
+            Strings.devName,
             style: GoogleFonts.inter(
               color: FooterSection.primary,
               fontSize: 22,
@@ -26,7 +27,7 @@ class FooterBrand extends StatelessWidget {
           const SizedBox(height: 16),
 
           Text(
-            "Building beautiful and performant mobile applications with Flutter.",
+            Strings.footerDevNote,
             style: GoogleFonts.inter(
               color: FooterSection.textLight,
               height: 1.6,

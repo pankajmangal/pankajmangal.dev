@@ -50,7 +50,7 @@ class ContactSection extends StatelessWidget {
                   horizontal: context.width < Breakpoints.tablet ? 0 : 200,
                 ),
                 child: Text(
-                  "Have a project in mind or want to collaborate? Feel free to reach out!",
+                  'Open to Flutter architecture roles, consulting, and scalable mobile product development.',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.inter(
                     fontSize: 16,

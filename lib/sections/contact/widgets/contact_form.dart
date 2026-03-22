@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
+import 'package:pankaj_portfolio/core/utils/dimens.dart';
 
 class ContactForm extends StatelessWidget {
   const ContactForm({super.key});
@@ -28,22 +29,22 @@ class ContactForm extends StatelessWidget {
       child: Column(
         children: [
 
-          TextField(decoration: fieldDecoration("Your name")),
+          TextField(decoration: fieldDecoration('Your name')),
 
           const SizedBox(height: 20),
 
-          TextField(decoration: fieldDecoration("your.email@example.com")),
+          TextField(decoration: fieldDecoration('your.email@example.com')),
 
           const SizedBox(height: 20),
 
-          TextField(decoration: fieldDecoration("Project inquiry")),
+          TextField(decoration: fieldDecoration('Project inquiry')),
 
           const SizedBox(height: 20),
 
           TextField(
             maxLines: 5,
             decoration: fieldDecoration(
-                "Tell me about your project..."),
+                'Tell me about your project...'),
           ),
 
           const SizedBox(height: 30),
@@ -54,8 +55,9 @@ class ContactForm extends StatelessWidget {
             child: ElevatedButton.icon(
               icon: const Icon(Icons.send),
               label: const Text(
-                "Send Message",
-                style: TextStyle(fontSize: 18),
+                'Send Message',
+                style: TextStyle(fontSize: Dimens.fontSize18,
+                color: AppColors.whiteColor),
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,

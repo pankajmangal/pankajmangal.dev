@@ -36,6 +36,9 @@ class Strings {
   //D
   static const devName = '<Pankaj.dev />';
 
+  //F
+  static const footerDevNote = 'Delivering scalable, high-performance mobile applications with clean architecture.';
+
   //H
   static const experiences = 'Experiences';
 
@@ -52,6 +55,8 @@ class Strings {
 
   //P
   static const projects = 'Projects';
+  static const professionalExperiences = 'Professional Experiences';
+  static const professionalExperienceDesc = '8+ Years Experience  |  500K+ Users  |  30% Crash Reduction  |  40% Faster Releases';
 
   //S
   static const skills = 'Skills';

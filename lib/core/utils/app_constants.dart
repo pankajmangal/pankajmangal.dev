@@ -3,6 +3,7 @@ import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/about/model/card_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final items = [
   CardData(Strings.aboutCardTitle1, Strings.aboutCardDesc1, ImagePaths.scalableArchitecture),
@@ -22,5 +23,16 @@ EdgeInsets getPadding(BuildContext context) {
     return const EdgeInsets.symmetric(horizontal: 40, vertical: 80);
   } else {
     return const EdgeInsets.symmetric(horizontal: 80, vertical: 100);
+  }
+}
+
+Future<void> openLink(String url) async {
+  final Uri uri = Uri.parse(url);
+
+  if (!await launchUrl(
+    uri,
+    mode: LaunchMode.externalApplication, // browser / new tab
+  )) {
+    throw Exception('Could not launch $url');
   }
 }
