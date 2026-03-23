@@ -3,8 +3,9 @@ import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/responsive/breakpoints.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
-import 'package:pankaj_portfolio/sections/contact/widgets/contact_form.dart';
-import 'package:pankaj_portfolio/sections/contact/widgets/contact_info.dart';
+import 'package:pankaj_portfolio/core/utils/strings.dart';
+import 'package:pankaj_portfolio/sections/contact/presentation/widgets/contact_form.dart';
+import 'package:pankaj_portfolio/sections/contact/presentation/widgets/contact_info.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
@@ -21,19 +22,15 @@ class ContactSection extends StatelessWidget {
           ),
           child: Column(
             children: [
-
-              /// TITLE
               Text(
-                "Get In Touch",
+                Strings.getInTouch,
                 style: GoogleFonts.inter(
                   fontSize: context.width < Breakpoints.tablet ? 26 : 32,
                   fontWeight: FontWeight.bold,
                   color: AppColors.darkText,
                 ),
               ),
-
               const SizedBox(height: 12),
-
               Container(
                 width: 80,
                 height: 4,
@@ -42,15 +39,13 @@ class ContactSection extends StatelessWidget {
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
-
               const SizedBox(height: 20),
-
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: context.width < Breakpoints.tablet ? 0 : 200,
                 ),
                 child: Text(
-                  'Open to Flutter architecture roles, consulting, and scalable mobile product development.',
+                  Strings.contactSectionDesc,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.inter(
                     fontSize: 16,
@@ -58,10 +53,7 @@ class ContactSection extends StatelessWidget {
                   ),
                 ),
               ),
-
               const SizedBox(height: 60),
-
-              /// RESPONSIVE LAYOUT
               context.isDesktop
                   ? Row(
                 crossAxisAlignment:

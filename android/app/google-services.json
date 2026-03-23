@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "948461763861",
+    "project_id": "pankaj-portfolio-a20fb",
+    "storage_bucket": "pankaj-portfolio-a20fb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948461763861:android:6d55e78456e4129e65bd1c",
+        "android_client_info": {
+          "package_name": "com.example.pankaj_portfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBys8_alCpw2HT08Zy_kflD2uMokoaTKJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

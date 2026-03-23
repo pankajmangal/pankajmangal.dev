@@ -20,7 +20,7 @@ class ExperienceSection extends StatelessWidget {
             Text(
               Strings.professionalExperiences,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: Dimens.fontSize40, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: Dimens.fontSize28, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
             Text(

@@ -32,12 +32,16 @@ class Strings {
   //C
   static const contact = 'Contact';
   static const contactMe = 'Contact Me';
+  static const contactSectionDesc = 'Open to Flutter architecture roles, consulting, and scalable mobile product development.';
 
   //D
   static const devName = '<Pankaj.dev />';
 
   //F
   static const footerDevNote = 'Delivering scalable, high-performance mobile applications with clean architecture.';
+
+  //G
+  static const getInTouch = 'Get In Touch';
 
   //H
   static const experiences = 'Experiences';

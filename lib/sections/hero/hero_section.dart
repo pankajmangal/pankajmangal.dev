@@ -38,4 +38,10 @@ class _HeroSectionState extends State<HeroSection>
       },
     );
   }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
 }

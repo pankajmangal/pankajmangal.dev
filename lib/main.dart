@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
@@ -5,8 +6,10 @@ import 'package:pankaj_portfolio/core/theme/theme_state.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
+import 'package:pankaj_portfolio/firebase_options.dart';
 import 'package:pankaj_portfolio/sections/about/about_us_section.dart';
-import 'package:pankaj_portfolio/sections/contact/contact_section.dart';
+import 'package:pankaj_portfolio/sections/contact/presentation/bloc/contact_bloc.dart';
+import 'package:pankaj_portfolio/sections/contact/presentation/contact_section.dart';
 import 'package:pankaj_portfolio/sections/experiences/experience_section.dart';
 import 'package:pankaj_portfolio/sections/footer/footer_section.dart';
 import 'package:pankaj_portfolio/sections/menu/portfolio_appbar.dart';
@@ -15,8 +18,18 @@ import 'package:pankaj_portfolio/widgets/items/nav_item.dart';
 import 'core/theme/theme_bloc.dart';
 import 'core/theme/app_theme.dart';
 import 'sections/hero/hero_section.dart';
+import 'core/di/portfolio_di.dart' as di;
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+
+  //Initialized di....
+  di.init();
+
+  //Initialized firebase...
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -25,8 +38,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => ThemeBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => ThemeBloc()),
+        BlocProvider(create: (_) => di.sl<ContactBloc>()),
+      ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {
           return MaterialApp(

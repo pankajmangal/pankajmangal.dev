@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
+import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/about/model/card_model.dart';
@@ -35,4 +36,17 @@ Future<void> openLink(String url) async {
   )) {
     throw Exception('Could not launch $url');
   }
+}
+
+InputDecoration fieldDecoration(String hint) {
+  return InputDecoration(
+    hintText: hint,
+    filled: true,
+    fillColor: Colors.transparent,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(Dimens.circularRadius12),
+    ),
+    contentPadding:
+    const EdgeInsets.symmetric(horizontal: Dimens.padding16, vertical: Dimens.padding18),
+  );
 }
