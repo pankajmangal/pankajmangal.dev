@@ -50,3 +50,10 @@ InputDecoration fieldDecoration(String hint) {
     const EdgeInsets.symmetric(horizontal: Dimens.padding16, vertical: Dimens.padding18),
   );
 }
+
+dynamic openLinkByLauncher(String url) async {
+  final uri = Uri.parse(url);
+  if (await canLaunchUrl(uri)) {
+    launchUrl(uri);
+  }
+}

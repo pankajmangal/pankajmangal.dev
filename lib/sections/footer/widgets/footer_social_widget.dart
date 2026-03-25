@@ -2,22 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/social_links.dart';
+import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
 
-class FooterSocial extends StatelessWidget {
+class FooterSocialWidget extends StatelessWidget {
 
   final Function(String) openLink;
-  const FooterSocial(this.openLink, {super.key});
+  const FooterSocialWidget(this.openLink, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment:
-      CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         Text(
-          'Connect With Me',
+          Strings.connectWithMe,
           style: GoogleFonts.inter(
             color: Colors.white,
             fontWeight: FontWeight.bold,

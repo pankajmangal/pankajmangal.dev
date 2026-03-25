@@ -32,13 +32,15 @@ class Strings {
   //C
   static const contact = 'Contact';
   static const contactMe = 'Contact Me';
+  static const connectWithMe = 'Connect With Me';
+  static const copyRightText = '© 2026 Pankaj Mangal • Built with Flutter ❤️';
   static const contactSectionDesc = 'Open to Flutter architecture roles, consulting, and scalable mobile product development.';
 
   //D
   static const devName = '<Pankaj.dev />';
 
   //F
-  static const footerDevNote = 'Delivering scalable, high-performance mobile applications with clean architecture.';
+  static const footerDevNote = 'Building scalable cross-platform mobile applications with clean architecture and performance-first design.';
 
   //G
   static const getInTouch = 'Get In Touch';
