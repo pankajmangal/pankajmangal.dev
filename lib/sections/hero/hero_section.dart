@@ -14,6 +14,7 @@ class _HeroSectionState extends State<HeroSection>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
+  bool _wasMobile = true;
 
   @override
   void initState() {
@@ -33,6 +34,14 @@ class _HeroSectionState extends State<HeroSection>
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
+        if (!context.isMobile && _wasMobile) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (Scaffold.of(context).isDrawerOpen) {
+              Navigator.of(context).pop();
+            }
+          });
+          _wasMobile = context.isMobile;
+        }
         if (context.isMobile) return HeroMobileLayout(controller: _controller, animation: _animation);
         return HeroDesktopLayout(controller: _controller, animation: _animation);
       },

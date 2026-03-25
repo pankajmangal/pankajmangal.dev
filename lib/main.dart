@@ -12,9 +12,10 @@ import 'package:pankaj_portfolio/sections/contact/presentation/bloc/contact_bloc
 import 'package:pankaj_portfolio/sections/contact/presentation/contact_section.dart';
 import 'package:pankaj_portfolio/sections/experiences/experience_section.dart';
 import 'package:pankaj_portfolio/sections/footer/footer_section.dart';
+import 'package:pankaj_portfolio/sections/menu/bloc/nav_bloc.dart';
 import 'package:pankaj_portfolio/sections/menu/portfolio_appbar.dart';
+import 'package:pankaj_portfolio/sections/menu/widgets/nav_item.dart';
 import 'package:pankaj_portfolio/sections/skills/skills_section.dart';
-import 'package:pankaj_portfolio/widgets/items/nav_item.dart';
 import 'core/theme/theme_bloc.dart';
 import 'core/theme/app_theme.dart';
 import 'sections/hero/hero_section.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(create: (_) => NavBloc()),
         BlocProvider(create: (_) => ThemeBloc()),
         BlocProvider(create: (_) => di.sl<ContactBloc>()),
       ],
@@ -96,58 +98,76 @@ class HomePage extends StatelessWidget {
               ),
               Divider(color: AppColors.background,),
               SizedBox(height: 24),
-              NavItem(
-                title: Strings.home,
-                fontSize: Dimens.fontSize18,
-                onTap: () {
-                  ScrollManager.scrollTo(ScrollManager.heroKey);
-                  Navigator.pop(context);
-                },
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: NavItem(
+                  title: Strings.home,
+                  fontSize: Dimens.fontSize18,
+                  onTap: () {
+                    ScrollManager.scrollTo(ScrollManager.heroKey);
+                    Navigator.pop(context);
+                  },
+                ),
               ),
-              SizedBox(height: 24),
-              NavItem(
-                title: Strings.about,
-                fontSize: Dimens.fontSize18,
-                onTap: () {
-                  ScrollManager.scrollTo(ScrollManager.aboutKey);
-                  Navigator.pop(context);
-                },
+              SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: NavItem(
+                  title: Strings.about,
+                  fontSize: Dimens.fontSize18,
+                  onTap: () {
+                    ScrollManager.scrollTo(ScrollManager.aboutKey);
+                    Navigator.pop(context);
+                  },
+                ),
               ),
-              SizedBox(height: 24),
-              NavItem(
-                title: Strings.skills,
-                fontSize: Dimens.fontSize18,
-                onTap: () {
-                  ScrollManager.scrollTo(ScrollManager.skillsKey);
-                  Navigator.pop(context);
-                },
+              SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: NavItem(
+                  title: Strings.skills,
+                  fontSize: Dimens.fontSize18,
+                  onTap: () {
+                    ScrollManager.scrollTo(ScrollManager.skillsKey);
+                    Navigator.pop(context);
+                  },
+                ),
               ),
-              SizedBox(height: 24),
-              NavItem(
-                title: Strings.experiences,
-                fontSize: Dimens.fontSize18,
-                onTap: () {
-                  ScrollManager.scrollTo(ScrollManager.experiencesKey);
-                  Navigator.pop(context);
-                },
+              SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: NavItem(
+                  title: Strings.experiences,
+                  fontSize: Dimens.fontSize18,
+                  onTap: () {
+                    ScrollManager.scrollTo(ScrollManager.experiencesKey);
+                    Navigator.pop(context);
+                  },
+                ),
               ),
-              SizedBox(height: 24),
-              NavItem(
-                title: Strings.projects,
-                fontSize: Dimens.fontSize18,
-                onTap: () {
-                  ScrollManager.scrollTo(ScrollManager.projectsKey);
-                  Navigator.pop(context);
-                },
+              SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: NavItem(
+                  title: Strings.projects,
+                  fontSize: Dimens.fontSize18,
+                  onTap: () {
+                    ScrollManager.scrollTo(ScrollManager.projectsKey);
+                    Navigator.pop(context);
+                  },
+                ),
               ),
-              SizedBox(height: 24),
-              NavItem(
-                title: Strings.contact,
-                fontSize: Dimens.fontSize18,
-                onTap: () {
-                  ScrollManager.scrollTo(ScrollManager.contactKey);
-                  Navigator.pop(context);
-                },
+              SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: NavItem(
+                  title: Strings.contact,
+                  fontSize: Dimens.fontSize18,
+                  onTap: () {
+                    ScrollManager.scrollTo(ScrollManager.contactKey);
+                    Navigator.pop(context);
+                  },
+                ),
               ),
             ],
           ),

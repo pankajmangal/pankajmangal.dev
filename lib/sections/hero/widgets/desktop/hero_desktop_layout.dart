@@ -145,7 +145,7 @@ class HeroDesktopLayout extends StatelessWidget {
           runSpacing: 12,
           children: [
             PortfolioElevatedButton(text: Strings.viewProjects, onPressed: (){},),
-            PortfolioOutlineButton(text: Strings.contactMe, onPressed: (){},),
+            PortfolioOutlineButton(text: Strings.contactMe, onPressed: () => ScrollManager.scrollTo(ScrollManager.contactKey),),
           ],
         ),
         const SizedBox(height: 30),

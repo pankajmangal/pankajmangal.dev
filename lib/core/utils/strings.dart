@@ -66,6 +66,7 @@ class Strings {
 
   //S
   static const skills = 'Skills';
+  static const sendMessage = 'Send Message';
   static const scrollToExplore = 'Scroll to explore';
   static const skillAndExpertise = 'Skills & Expertise';
   static const skillDescription = 'Comprehensive toolkit for building scalable Flutter applications';

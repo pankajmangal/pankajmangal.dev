@@ -5,7 +5,7 @@ import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
-import 'package:pankaj_portfolio/widgets/items/nav_item.dart';
+import 'package:pankaj_portfolio/sections/menu/widgets/nav_item.dart';
 
 class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
   const PortfolioAppBar({super.key});
@@ -55,7 +55,7 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
                     NavItem(
                       title: Strings.experiences,
                       onTap: () =>
-                          ScrollManager.scrollTo(ScrollManager.projectsKey),
+                          ScrollManager.scrollTo(ScrollManager.experiencesKey),
                     ),
                     NavItem(
                       title: Strings.projects,

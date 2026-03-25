@@ -21,24 +21,26 @@ class ContactInfo extends StatelessWidget {
             child: Icon(icon, color: AppColors.primary),
           ),
           const SizedBox(width: 20),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: GoogleFonts.inter(
-                  fontSize: Dimens.fontSize18,
-                  fontWeight: FontWeight.w600,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: GoogleFonts.inter(
+                    fontSize: Dimens.fontSize18,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-              ),
-              Text(
-                value,
-                style: GoogleFonts.inter(
-                  fontSize: Dimens.fontSize16,
-                  color: AppColors.lightText,
+                Text(
+                  value,
+                  style: GoogleFonts.inter(
+                    fontSize: Dimens.fontSize16,
+                    color: AppColors.lightText,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           )
         ],
       ),
