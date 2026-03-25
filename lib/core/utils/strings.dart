@@ -61,7 +61,7 @@ class Strings {
 
   //P
   static const projects = 'Projects';
-  static const professionalExperiences = 'Professional Experiences';
+  static const professionalExperiences = 'Experiences';
   static const professionalExperienceDesc = '8+ Years Experience  |  500K+ Users  |  30% Crash Reduction  |  40% Faster Releases';
 
   //S

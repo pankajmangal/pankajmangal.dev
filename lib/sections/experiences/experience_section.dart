@@ -31,29 +31,46 @@ class ExperienceSection extends StatelessWidget {
             ExperienceMobileTileLayout(
               company: 'Mindmap Technologies',
               role: 'Senior Flutter Engineer',
-              duration: '2025 - Present',
+              duration: 'Jan 2025 - Nov 2025',
               metrics: ['30% Crash Reduction', '40% Faster Releases'],
               points: [
-                'Clean architecture with BLoC & Riverpod',
-                'CI/CD automation pipelines',
-                'Performance optimization',
+                'Designed scalable apps using Clean Architecture (BLoC + Riverpod)',
+                'Reduced production crashes by 30% via performance optimization',
+                'Automated CI/CD pipelines reducing release cycle by 40%',
+                'Integrated analytics and performance monitoring',
+                'Built reusable modular components',
               ],
-              tech: ['Flutter', 'Riverpod', 'CI/CD'],
+              tech: ['Flutter', 'BLoC', 'Riverpod', 'CI/CD', 'Firebase', 'Analytics', 'Testing',],
             ),
-
             SizedBox(height: 30),
-
             ExperienceMobileTileLayout(
               company: 'Mobikasa',
               role: 'Flutter Developer',
-              duration: '2023 - 2025',
+              duration: 'June 2023 - Jan 2025',
               metrics: ['500K+ Downloads', '25% Checkout Boost'],
               points: [
-                'Loyalty wallet system',
-                'GraphQL integration',
-                'Performance improvements',
+                'Scaled e-commerce Flutter app to 500K+ downloads',
+                'Implemented loyalty rewards and wallet system',
+                'Improved checkout conversion by 25%',
+                'Integrated Shopify, REST & GraphQL APIs',
+                'Delivered performance improvements across platforms'
               ],
-              tech: ['Flutter', 'GraphQL', 'Firebase'],
+              tech: ['Flutter', 'GraphQL', 'REST APIs', 'Shopify', 'Firebase', 'Analytics',],
+            ),
+            SizedBox(height: 30),
+            ExperienceMobileTileLayout(
+              company: 'Alertus Technologies',
+              role: 'Flutter Developer',
+              duration: 'Oct 2022 - Jun 2023',
+              metrics: ['20% Stability Improvement', 'Multi-Platform Delivery'],
+              points: [
+                'Built multi-platform Flutter apps (Android, iOS, Web, Tablet)',
+                'Improved app stability by 20% through automated testing',
+                'Optimized Flutter Web performance across browsers',
+                'Implemented WCAG accessibility components',
+                'Established code review and documentation workflows'
+              ],
+              tech: ['Flutter', 'Flutter Web', 'Accessibility', 'Testing', 'Responsive UI', 'CI/CD',],
             ),
           ],
         );
@@ -77,26 +94,43 @@ class ExperienceSection extends StatelessWidget {
               duration: 'Jan 2025 - Nov 2025',
               metrics: ['30% Crash Reduction', '40% Faster Releases'],
               points: [
-                'Clean architecture with BLoC & Riverpod',
-                'CI/CD automation pipelines',
-                'Performance optimization',
+                'Designed scalable apps using Clean Architecture (BLoC + Riverpod)',
+                'Reduced production crashes by 30% via performance optimization',
+                'Automated CI/CD pipelines reducing release cycle by 40%',
+                'Integrated analytics and performance monitoring',
+                'Built reusable modular components',
               ],
-              tech: ['Flutter', 'BLoC', 'Riverpod', 'CI/CD'],
+              tech: ['Flutter', 'BLoC', 'Riverpod', 'CI/CD', 'Firebase', 'Analytics', 'Testing',],
             ),
-
             SizedBox(height: 30),
-
             ExperienceDesktopTileLayout(
               company: 'Mobikasa',
               role: 'Flutter Developer',
               duration: 'June 2023 - Jan 2025',
               metrics: ['500K+ Downloads', '25% Checkout Boost'],
               points: [
-                'Loyalty wallet system',
-                'GraphQL integration',
-                'Performance improvements',
+                'Scaled e-commerce Flutter app to 500K+ downloads',
+                'Implemented loyalty rewards and wallet system',
+                'Improved checkout conversion by 25%',
+                'Integrated Shopify, REST & GraphQL APIs',
+                'Delivered performance improvements across platforms'
               ],
-              tech: ['Flutter', 'Shopify', 'GraphQL', 'Firebase'],
+              tech: ['Flutter', 'GraphQL', 'REST APIs', 'Shopify', 'Firebase', 'Analytics',],
+            ),
+            SizedBox(height: 30),
+            ExperienceDesktopTileLayout(
+              company: 'Alertus Technologies',
+              role: 'Flutter Developer',
+              duration: 'Oct 2022 - Jun 2023',
+              metrics: ['20% Stability Improvement', 'Multi-Platform Delivery'],
+              points: [
+                'Built multi-platform Flutter apps (Android, iOS, Web, Tablet)',
+                'Improved app stability by 20% through automated testing',
+                'Optimized Flutter Web performance across browsers',
+                'Implemented WCAG accessibility components',
+                'Established code review and documentation workflows'
+              ],
+              tech: ['Flutter', 'Flutter Web', 'Accessibility', 'Testing', 'Responsive UI', 'CI/CD',],
             ),
           ],
         );
