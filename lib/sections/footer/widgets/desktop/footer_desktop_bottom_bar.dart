@@ -20,8 +20,8 @@ class FooterDesktopBottomBar extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                Strings.copyRightText,
-                textAlign: TextAlign.center,
+                Strings.copyrightText,
+                textAlign: TextAlign.left,
                 style: const TextStyle(
                   color: Colors.white54,
                   fontSize: Dimens.fontSize14,
@@ -30,7 +30,25 @@ class FooterDesktopBottomBar extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 10,),
-            ScrollToTopButtonWidget(),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Text(
+                    Strings.buildWith,
+                    textAlign: TextAlign.left,
+                    style: const TextStyle(
+                      color: Colors.white54,
+                      fontSize: Dimens.fontSize14,
+                      height: 1.5,
+                    ),
+                  ),
+                  const SizedBox(width: 16,),
+                  ScrollToTopButtonWidget(),
+                ],
+              ),
+            ),
           ],
         ),
       ],

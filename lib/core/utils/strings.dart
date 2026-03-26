@@ -29,11 +29,14 @@ class Strings {
   static const animatedText3 = 'Cross-Platform Product Engineering';
   static const animatedText4 = 'Clean Architecture & Modular Systems';
 
+  //B
+  static const buildWith = 'Built with Flutter Passion ❤️';
+
   //C
   static const contact = 'Contact';
   static const contactMe = 'Contact Me';
   static const connectWithMe = 'Connect With Me';
-  static const copyRightText = '© 2026 Pankaj Mangal • Built with Flutter ❤️';
+  static const copyrightText = '© 2026 Pankaj Mangal. All rights reserved.️';
   static const contactSectionDesc = 'Open to Flutter architecture roles, consulting, and scalable mobile product development.';
 
   //D

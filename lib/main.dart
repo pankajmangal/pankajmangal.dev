@@ -15,6 +15,7 @@ import 'package:pankaj_portfolio/sections/footer/footer_section.dart';
 import 'package:pankaj_portfolio/sections/menu/bloc/nav_bloc.dart';
 import 'package:pankaj_portfolio/sections/menu/portfolio_appbar.dart';
 import 'package:pankaj_portfolio/sections/menu/widgets/nav_item.dart';
+import 'package:pankaj_portfolio/sections/portfolio/portfolio_section.dart';
 import 'package:pankaj_portfolio/sections/skills/skills_section.dart';
 import 'core/theme/theme_bloc.dart';
 import 'core/theme/app_theme.dart';
@@ -181,11 +182,11 @@ class HomePage extends StatelessWidget {
             AboutSection(),
             SkillsSection(),
             ExperienceSection(),
-            ContactSection(),
-            FooterSection(),
             // HighlightsSection(),
             // ProjectsSection(),
-            // PortfolioSection()
+            // PortfolioSection(),
+            ContactSection(),
+            FooterSection(),
           ],
         ),
       ),

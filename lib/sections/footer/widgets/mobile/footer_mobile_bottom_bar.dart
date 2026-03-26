@@ -19,14 +19,29 @@ class FooterMobileBottomBar extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
-              child: Text(
-                Strings.copyRightText,
-                textAlign: TextAlign.left,
-                style: const TextStyle(
-                  color: Colors.white54,
-                  fontSize: Dimens.fontSize14,
-                  height: 1.5,
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    Strings.copyrightText,
+                    textAlign: TextAlign.left,
+                    style: const TextStyle(
+                      color: Colors.white54,
+                      fontSize: Dimens.fontSize14,
+                      height: 1.5,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    Strings.buildWith,
+                    textAlign: TextAlign.left,
+                    style: const TextStyle(
+                      color: Colors.white54,
+                      fontSize: Dimens.fontSize14,
+                      height: 1.5,
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(width: 10,),
