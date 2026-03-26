@@ -1,7 +1,5 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/app_constants.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
@@ -9,6 +7,7 @@ import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/social_links.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
+import 'package:pankaj_portfolio/sections/hero/widgets/hero_animated_text_widget.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_elevated_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_outline_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
@@ -23,10 +22,9 @@ class HeroMobileLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(minHeight: 600),
+      constraints: const BoxConstraints(minHeight: 650),
       child: Container(
         key: ScrollManager.heroKey,
-        height: context.height,
         padding: EdgeInsets.symmetric(
           horizontal: 24,
         ),
@@ -38,7 +36,6 @@ class HeroMobileLayout extends StatelessWidget {
               _profileImage(),
               const SizedBox(height: 30),
               _leftContent(),
-
               const SizedBox(height: 30),
               Text(
                 Strings.scrollToExplore,
@@ -87,43 +84,7 @@ class HeroMobileLayout extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        AnimatedTextKit(
-          repeatForever: true,
-          animatedTexts: [
-            TypewriterAnimatedText(
-              Strings.animatedText1,
-              speed: const Duration(milliseconds: 50),
-              textStyle: GoogleFonts.inter(
-                fontSize: Dimens.fontSize18,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            TypewriterAnimatedText(
-              Strings.animatedText2,
-              speed: const Duration(milliseconds: 50),
-              textStyle: GoogleFonts.inter(
-                fontSize: Dimens.fontSize18,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            TypewriterAnimatedText(
-              Strings.animatedText3,
-              speed: const Duration(milliseconds: 50),
-              textStyle: GoogleFonts.inter(
-                fontSize: Dimens.fontSize18,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            TypewriterAnimatedText(
-              Strings.animatedText4,
-              speed: const Duration(milliseconds: 50),
-              textStyle: GoogleFonts.inter(
-                fontSize: Dimens.fontSize18,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ],
-        ),
+        HeroAnimatedTextWidget(),
         const SizedBox(height: 20),
         SizedBox(
           width: double.infinity,

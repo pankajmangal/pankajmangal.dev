@@ -1,4 +1,3 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
@@ -9,6 +8,7 @@ import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/social_links.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
+import 'package:pankaj_portfolio/sections/hero/widgets/hero_animated_text_widget.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_elevated_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_outline_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
@@ -88,43 +88,7 @@ class HeroDesktopLayout extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        AnimatedTextKit(
-          repeatForever: true,
-          animatedTexts: [
-            TypewriterAnimatedText(
-              Strings.animatedText1,
-              speed: const Duration(milliseconds: 50),
-              textStyle: GoogleFonts.inter(
-                fontSize: Dimens.fontSize24,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            TypewriterAnimatedText(
-              Strings.animatedText2,
-              speed: const Duration(milliseconds: 50),
-              textStyle: GoogleFonts.inter(
-                fontSize: Dimens.fontSize24,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            TypewriterAnimatedText(
-              Strings.animatedText3,
-              speed: const Duration(milliseconds: 50),
-              textStyle: GoogleFonts.inter(
-                fontSize: Dimens.fontSize24,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-            TypewriterAnimatedText(
-              Strings.animatedText4,
-              speed: const Duration(milliseconds: 50),
-              textStyle: GoogleFonts.inter(
-                fontSize: Dimens.fontSize24,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ],
-        ),
+        HeroAnimatedTextWidget(heroFontSize: Dimens.fontSize24,),
         const SizedBox(height: 20),
         SizedBox(
           width: 520,
