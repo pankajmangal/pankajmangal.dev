@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
+import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 
 class ContactHeaderDesktopWidget extends StatelessWidget {
@@ -13,8 +14,8 @@ class ContactHeaderDesktopWidget extends StatelessWidget {
         Text(
           Strings.getInTouch,
           style: GoogleFonts.inter(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
+            fontSize: Dimens.fontSize36,
+            fontWeight: FontWeight.w700,
             color: AppColors.darkText,
           ),
         ),

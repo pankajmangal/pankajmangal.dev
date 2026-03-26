@@ -14,8 +14,8 @@ class ContactHeaderMobileWidget extends StatelessWidget {
         Text(
           Strings.getInTouch,
           style: GoogleFonts.inter(
-            fontSize: Dimens.fontSize26,
-            fontWeight: FontWeight.bold,
+            fontSize: Dimens.fontSize24,
+            fontWeight: FontWeight.w700,
             color: AppColors.darkText,
           ),
         ),

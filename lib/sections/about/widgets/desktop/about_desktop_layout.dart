@@ -27,7 +27,7 @@ class AboutDesktopLayout extends StatelessWidget {
             Strings.aboutMe,
             textAlign: TextAlign.center,
             style: GoogleFonts.inter(
-              fontSize: Dimens.fontSize34,
+              fontSize: Dimens.fontSize36,
               fontWeight: FontWeight.w700,
               color: AppColors.darkText,
             ),

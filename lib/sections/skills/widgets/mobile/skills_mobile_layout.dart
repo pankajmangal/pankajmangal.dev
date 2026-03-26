@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/app_constants.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
@@ -19,7 +20,9 @@ class SkillsMobileLayout extends StatelessWidget {
           const Text(
             Strings.skillAndExpertise,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: Dimens.fontSize28, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: Dimens.fontSize24,
+              fontWeight: FontWeight.w700,
+              color: AppColors.darkText,),
           ),
           const SizedBox(height: 10),
           const Text(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
@@ -20,7 +21,9 @@ class ExperienceSection extends StatelessWidget {
             Text(
               Strings.professionalExperiences,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: Dimens.fontSize28, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: Dimens.fontSize24,
+                fontWeight: FontWeight.w700,
+                color: AppColors.darkText,),
             ),
             SizedBox(height: 10),
             Text(
@@ -80,7 +83,9 @@ class ExperienceSection extends StatelessWidget {
             Text(
               Strings.professionalExperiences,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: Dimens.fontSize40, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: Dimens.fontSize36,
+                fontWeight: FontWeight.w700,
+                color: AppColors.darkText,),
             ),
             SizedBox(height: 10),
             Text(
