@@ -16,5 +16,5 @@ class ImagePaths {
   static const favourite = 'assets/svg/favourite.svg';
 
   // PNG images here....
-  static const profileImg = 'assets/profile.png';
+  static const profileImg = 'assets/profile.webp';
 }
