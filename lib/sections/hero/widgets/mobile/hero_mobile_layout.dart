@@ -13,12 +13,17 @@ import 'package:pankaj_portfolio/widgets/buttons/portfolio_outline_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
 import 'package:pankaj_portfolio/widgets/indicator/scroll_indicator.dart';
 
-class HeroMobileLayout extends StatelessWidget {
-   const HeroMobileLayout({super.key, required this.controller, required this.animation});
+class HeroMobileLayout extends StatefulWidget {
+  const HeroMobileLayout({super.key, required this.controller, required this.animation});
 
   final AnimationController controller;
   final Animation<double> animation;
 
+  @override
+  State<HeroMobileLayout> createState() => _HeroMobileLayoutState();
+}
+
+class _HeroMobileLayoutState extends State<HeroMobileLayout> {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
@@ -127,7 +132,7 @@ class HeroMobileLayout extends StatelessWidget {
 
     return Center(
       child: AnimatedBuilder(
-        animation: controller,
+        animation: widget.controller,
         builder: (context, child) {
           return Container(
             width: size,
@@ -138,8 +143,8 @@ class HeroMobileLayout extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.blue.withValues(alpha: .25),
-                  blurRadius: 40 * controller.value,
-                  spreadRadius: 10 * controller.value,
+                  blurRadius: 40 * widget.controller.value,
+                  spreadRadius: 10 * widget.controller.value,
                 )
               ],
               image: const DecorationImage(
@@ -151,5 +156,11 @@ class HeroMobileLayout extends StatelessWidget {
         },
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    widget.controller.dispose();
   }
 }

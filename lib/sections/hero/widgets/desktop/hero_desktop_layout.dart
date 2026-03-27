@@ -14,12 +14,17 @@ import 'package:pankaj_portfolio/widgets/buttons/portfolio_outline_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
 import 'package:pankaj_portfolio/widgets/indicator/scroll_indicator.dart';
 
-class HeroDesktopLayout extends StatelessWidget {
+class HeroDesktopLayout extends StatefulWidget {
   const HeroDesktopLayout({super.key, required this.controller, required this.animation});
 
   final AnimationController controller;
   final Animation<double> animation;
 
+  @override
+  State<HeroDesktopLayout> createState() => _HeroDesktopLayoutState();
+}
+
+class _HeroDesktopLayoutState extends State<HeroDesktopLayout> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -131,7 +136,7 @@ class HeroDesktopLayout extends StatelessWidget {
 
     return Center(
       child: AnimatedBuilder(
-        animation: controller,
+        animation: widget.controller,
         builder: (context, child) {
           return Container(
             width: size,
@@ -142,8 +147,8 @@ class HeroDesktopLayout extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.blue.withValues(alpha: .25),
-                  blurRadius: 40 * controller.value,
-                  spreadRadius: 10 * controller.value,
+                  blurRadius: 40 * widget.controller.value,
+                  spreadRadius: 10 * widget.controller.value,
                 )
               ],
               image: const DecorationImage(
@@ -155,5 +160,11 @@ class HeroDesktopLayout extends StatelessWidget {
         },
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    widget.controller.dispose();
   }
 }

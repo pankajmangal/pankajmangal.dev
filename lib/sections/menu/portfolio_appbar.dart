@@ -8,7 +8,9 @@ import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/menu/widgets/nav_item.dart';
 
 class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const PortfolioAppBar({super.key});
+  const PortfolioAppBar({super.key, required this.controller});
+
+  final AnimationController controller;
 
   @override
   Size get preferredSize => const Size.fromHeight(80);
@@ -78,6 +80,7 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
                   icon: const Icon(Icons.menu),
                   onPressed: () {
                     Scaffold.of(context).openEndDrawer();
+                    controller.forward(from: 0);
                   },
                 ),
               ),
