@@ -73,7 +73,7 @@
     "platforms": ["Android", "iOS"],
     "playStoreUrl": "https://play.google.com/store/apps/details?id=taxiappuk.driver",
     "appStoreUrl": "https://apps.apple.com/in/app/taxiapp-uk-driver/id1639547207",
-    "featured": false,
+    "featured": true,
     "order": 5
   },
   {
@@ -200,5 +200,44 @@
     "appStoreUrl": "https://apps.apple.com/in/app/bilddit/id6502040720",
     "featured": true,
     "order": 3
+  },
+  {
+    "title": "Notebook STORE",
+    "shortDescription": "One-stop stationery and educational supplies app for students, offices, and institutions.",
+    "description": "Notebook Store is a one-stop solution for stationery, essential goods, books, and educational toys designed for students, teachers, offices, and businesses. The app provides a wide range of products including notebooks, pens, registers, books, educational toys, and cleaning supplies in a single platform. Users can conveniently browse categories, place orders, and benefit from attractive offers on every purchase. Notebook Store focuses on affordability and convenience, making it easy to access essential school, office, and business supplies from one place.",
+    "banner": "https://raw.githubusercontent.com/pankajmangal/portfolio-assets/main/notebook_store.webp",
+    "thumbnail": "",
+    "technologies": [
+      "Kotlin",
+      "Android",
+      "Firebase",
+      "REST API",
+      "MVVM",
+      "Coroutine",
+      "Room Database",
+      "Firebase Analytics"
+    ],
+    "features": [
+      "Wide stationery collection",
+      "Books & educational toys",
+      "Office & business supplies",
+      "Cleaning products",
+      "Category-based browsing",
+      "Cart & checkout",
+      "Product offers & discounts",
+      "Secure online payments",
+      "Easy ordering experience"
+    ],
+    "highlights": [
+      "All-in-one stationery store",
+      "Affordable pricing",
+      "Educational products",
+      "Daily offers"
+    ],
+    "platforms": ["Android"],
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.notebook.android",
+    "appStoreUrl": "",
+    "featured": false,
+    "order": 6
   }
 ]
