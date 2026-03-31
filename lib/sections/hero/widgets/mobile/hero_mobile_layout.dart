@@ -109,7 +109,7 @@ class _HeroMobileLayoutState extends State<HeroMobileLayout> {
           spacing: 16,
           runSpacing: 12,
           children: [
-            PortfolioElevatedButton(text: Strings.viewProjects, onPressed: (){},),
+            PortfolioElevatedButton(text: Strings.viewProjects, onPressed: () => ScrollManager.scrollTo(ScrollManager.projectsKey),),
             PortfolioOutlineButton(text: Strings.contactMe, onPressed: () => ScrollManager.scrollTo(ScrollManager.contactKey),),
           ],
         ),
