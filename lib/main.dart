@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/theme/theme_state.dart';
-import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
-import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/firebase_options.dart';
 import 'package:pankaj_portfolio/sections/about/about_us_section.dart';
 import 'package:pankaj_portfolio/sections/contact/presentation/bloc/contact_bloc.dart';
@@ -14,8 +12,8 @@ import 'package:pankaj_portfolio/sections/experiences/experience_section.dart';
 import 'package:pankaj_portfolio/sections/footer/footer_section.dart';
 import 'package:pankaj_portfolio/sections/menu/bloc/nav_bloc.dart';
 import 'package:pankaj_portfolio/sections/menu/portfolio_appbar.dart';
-import 'package:pankaj_portfolio/sections/menu/widgets/nav_item.dart';
-import 'package:pankaj_portfolio/sections/menu/widgets/staggered_menu_item.dart';
+import 'package:pankaj_portfolio/sections/menu/widgets/mobile/mobile_drawer_widget.dart';
+import 'package:pankaj_portfolio/sections/projects/presentation/projects_section.dart';
 import 'package:pankaj_portfolio/sections/skills/skills_section.dart';
 import 'core/theme/theme_bloc.dart';
 import 'core/theme/app_theme.dart';
@@ -81,11 +79,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     );
   }
 
-  void closeMenu() async {
-    await _controller.reverse();
-    if (!mounted) return;
-    Navigator.of(context).pop();
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -93,124 +87,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       backgroundColor: AppColors.background,
       appBar: PortfolioAppBar(controller: _controller,),
       endDrawer: Drawer(
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      '',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-
-                    IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () => closeMenu(),
-                    )
-                  ],
-                ),
-              ),
-              Divider(color: AppColors.background,),
-              SizedBox(height: 24),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: StaggeredMenuItem(animation: CurvedAnimation(
-                  parent: _controller,
-                  curve: const Interval(0.0, 0.2, curve: Curves.easeOut),
-                ), child: NavItem(
-                  title: Strings.home,
-                  fontSize: Dimens.fontSize18,
-                  onTap: () {
-                    ScrollManager.scrollTo(ScrollManager.heroKey);
-                    Navigator.pop(context);
-                  },
-                )),
-              ),
-              SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: StaggeredMenuItem(animation: CurvedAnimation(
-                  parent: _controller,
-                  curve: const Interval(0.1, 0.3, curve: Curves.easeOut),
-                ), child: NavItem(
-                  title: Strings.about,
-                  fontSize: Dimens.fontSize18,
-                  onTap: () {
-                    ScrollManager.scrollTo(ScrollManager.aboutKey);
-                    Navigator.pop(context);
-                  },
-                )),
-              ),
-              SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: StaggeredMenuItem(animation: CurvedAnimation(
-                  parent: _controller,
-                  curve: const Interval(0.2, 0.4, curve: Curves.easeOut),
-                ), child: NavItem(
-                  title: Strings.skills,
-                  fontSize: Dimens.fontSize18,
-                  onTap: () {
-                    ScrollManager.scrollTo(ScrollManager.skillsKey);
-                    Navigator.pop(context);
-                  },
-                )),
-              ),
-              SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: StaggeredMenuItem(animation: CurvedAnimation(
-                  parent: _controller,
-                  curve: const Interval(0.3, 0.5, curve: Curves.easeOut),
-                ), child: NavItem(
-                  title: Strings.experiences,
-                  fontSize: Dimens.fontSize18,
-                  onTap: () {
-                    ScrollManager.scrollTo(ScrollManager.experiencesKey);
-                    Navigator.pop(context);
-                  },
-                )),
-              ),
-              SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: StaggeredMenuItem(animation: CurvedAnimation(
-                  parent: _controller,
-                  curve: const Interval(0.4, 0.6, curve: Curves.easeOut),
-                ), child: NavItem(
-                  title: Strings.projects,
-                  fontSize: Dimens.fontSize18,
-                  onTap: () {
-                    ScrollManager.scrollTo(ScrollManager.projectsKey);
-                    Navigator.pop(context);
-                  },
-                )),
-              ),
-              SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0),
-                child: StaggeredMenuItem(animation: CurvedAnimation(
-                  parent: _controller,
-                  curve: const Interval(0.5, 0.7, curve: Curves.easeOut),
-                ), child: NavItem(
-                  title: Strings.contact,
-                  fontSize: Dimens.fontSize18,
-                  onTap: () {
-                    ScrollManager.scrollTo(ScrollManager.contactKey);
-                    Navigator.pop(context);
-                  },
-                )),
-              ),
-            ],
-          ),
-        ),
+        child: MobileDrawerWidget(controller: _controller),
       ),
       body: SingleChildScrollView(
         controller: ScrollManager.controller,
@@ -221,7 +98,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             SkillsSection(),
             ExperienceSection(),
             // HighlightsSection(),
-            // ProjectsSection(),
+            ProjectsSection(),
             // PortfolioSection(),
             ContactSection(),
             FooterSection(),

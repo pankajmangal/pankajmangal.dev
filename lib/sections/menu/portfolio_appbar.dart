@@ -3,9 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
-import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
-import 'package:pankaj_portfolio/sections/menu/widgets/nav_item.dart';
+import 'package:pankaj_portfolio/sections/menu/widgets/desktop/desktop_appbar_widget.dart';
+import 'package:pankaj_portfolio/sections/menu/widgets/mobile/mobile_appbar_widget.dart';
 
 class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
   const PortfolioAppBar({super.key, required this.controller});
@@ -35,56 +35,10 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: !isMobile
           ? [
-              Padding(
-                padding: const EdgeInsets.only(right: 80),
-                child: Row(
-                  children: [
-                    NavItem(
-                      title: Strings.home,
-                      onTap: () =>
-                          ScrollManager.scrollTo(ScrollManager.heroKey),
-                    ),
-                    NavItem(
-                      title: Strings.about,
-                      onTap: () =>
-                          ScrollManager.scrollTo(ScrollManager.aboutKey),
-                    ),
-                    NavItem(
-                      title: Strings.skills,
-                      onTap: () =>
-                          ScrollManager.scrollTo(ScrollManager.skillsKey),
-                    ),
-                    NavItem(
-                      title: Strings.experiences,
-                      onTap: () =>
-                          ScrollManager.scrollTo(ScrollManager.experiencesKey),
-                    ),
-                    NavItem(
-                      title: Strings.projects,
-                      onTap: () =>
-                          ScrollManager.scrollTo(ScrollManager.projectsKey),
-                    ),
-                    NavItem(
-                      title: Strings.contact,
-                      onTap: () =>
-                          ScrollManager.scrollTo(ScrollManager.contactKey),
-                    ),
-                    // ThemeToggle(),
-                  ],
-                ),
-              ),
+              DesktopAppbarWidget(),
+              // ThemeToggle(),
             ]
-          : [
-              Builder(
-                builder: (context) => IconButton(
-                  icon: const Icon(Icons.menu),
-                  onPressed: () {
-                    Scaffold.of(context).openEndDrawer();
-                    controller.forward(from: 0);
-                  },
-                ),
-              ),
-            ],
+          : [MobileAppbarWidget(controller: controller)],
     );
   }
 }
