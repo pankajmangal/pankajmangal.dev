@@ -35,7 +35,7 @@
     "playStoreUrl": "https://play.google.com/store/apps/details?id=taxiappuk.passenger",
     "appStoreUrl": "https://apps.apple.com/gb/app/taxiapp-uk-london-black-cab/id1639547043",
     "featured": true,
-    "order": 2
+    "order": 4
   },
   {
     "title": "Taxiapp UK Driver",
@@ -74,7 +74,7 @@
     "playStoreUrl": "https://play.google.com/store/apps/details?id=taxiappuk.driver",
     "appStoreUrl": "https://apps.apple.com/in/app/taxiapp-uk-driver/id1639547207",
     "featured": false,
-    "order": 3
+    "order": 5
   },
   {
     "title": "PayMaya",
@@ -115,5 +115,90 @@
     "appStoreUrl": "https://apps.apple.com/us/app/maya-savings-loans-cards/id991673877",
     "featured": true,
     "order": 1
+  },
+  {
+    "title": "Amala Earth",
+    "shortDescription": "Sustainable shopping app offering eco-friendly products, organic essentials, and conscious lifestyle brands.",
+    "description": "Amala Earth is a conscious shopping platform featuring over 60,000 eco-friendly products from 400+ homegrown brands. The app offers thoughtfully curated categories including sustainable gift hampers, handcrafted home decor, organic foods, chemical-free beauty products, kids and baby essentials, and herbal wellness supplements. Users can explore artisanal collections such as kansa thali sets, copper drinkware, organic bedding, vegan foods, and natural skincare. Amala Earth promotes mindful living with toxin-free, cruelty-free, and earth-friendly products. The app also provides easy order tracking, exclusive deals, secure payments, and rewards through Earth Seeds for every purchase.",
+    "banner": "https://raw.githubusercontent.com/pankajmangal/portfolio-assets/main/amala_earth.webp",
+    "thumbnail": "",
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Swift",
+      "Kotlin",
+      "Android",
+      "Firebase",
+      "REST/GraphQL API",
+      "Clean Architecture",
+      "Bloc/Cubit State management",
+      "Moengage/AppsFlyer/Firebase Analytics",
+      "Razorpay Payment Gateway Integration"
+    ],
+    "features": [
+      "Shop 60,000+ eco-friendly products",
+      "400+ homegrown brands",
+      "Sustainable gift hampers",
+      "Organic foods & beverages",
+      "Chemical-free beauty products",
+      "Kids & baby eco essentials",
+      "Mind-body wellness products",
+      "Secure payments",
+      "Order tracking & returns",
+      "Exclusive deals & flash sales"
+    ],
+    "highlights": [
+      "Eco-friendly marketplace",
+      "60,000+ products",
+      "400+ brands",
+      "Conscious shopping"
+    ],
+    "platforms": ["Android", "iOS"],
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.amala.earth",
+    "appStoreUrl": "https://apps.apple.com/in/app/amala-earth-online-shopping/id1591399697",
+    "featured": true,
+    "order": 2
+  },
+  {
+    "title": "Bilddit",
+    "shortDescription": "On-demand marketplace for building materials with fast delivery and secure online ordering.",
+    "description": "Bilddit is an online marketplace for building materials, plumbing and heating supplies, and electrical products designed for trade professionals and DIY users. The platform enables users to quickly search for parts, place orders, and receive deliveries in as little as 50 minutes. By eliminating time spent driving, parking, and queuing for materials, Bilddit helps increase productivity and billable hours. The app offers a seamless ordering experience with secure online payments, fast delivery, and convenient access to essential trade supplies, making everyday work easier for professionals.",
+    "banner": "https://raw.githubusercontent.com/pankajmangal/portfolio-assets/main/bilddit.webp",
+    "thumbnail": "",
+    "technologies": [
+      "Flutter",
+      "Dart",
+      "Swift",
+      "Kotlin",
+      "Android",
+      "Firebase",
+      "REST/GraphQL API",
+      "Clean Architecture",
+      "Bloc/Cubit State management",
+      "Firebase Analytics",
+      "Cashfree Payment Gateway Integration"
+    ],
+    "features": [
+      "Marketplace for building materials",
+      "Plumbing & heating supplies",
+      "Electrical products",
+      "Fast 50-minute delivery",
+      "Search and order parts",
+      "Secure online payments",
+      "Cart-based ordering",
+      "Real-time order processing",
+      "Trade & DIY support"
+    ],
+    "highlights": [
+      "Fast delivery",
+      "Trade-focused marketplace",
+      "Secure payments",
+      "On-demand materials"
+    ],
+    "platforms": ["Android", "iOS"],
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.bilddit.bilddit",
+    "appStoreUrl": "https://apps.apple.com/in/app/bilddit/id6502040720",
+    "featured": true,
+    "order": 3
   }
 ]
