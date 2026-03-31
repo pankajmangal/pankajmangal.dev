@@ -30,8 +30,7 @@ EdgeInsets getPadding(BuildContext context) {
 Future<void> openLink(String url) async {
   final Uri uri = Uri.parse(url);
 
-  if (!await launchUrl(
-    uri,
+  if (!await launchUrl(uri,
     mode: LaunchMode.externalApplication, // browser / new tab
   )) {
     throw Exception('Could not launch $url');

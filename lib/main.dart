@@ -13,6 +13,8 @@ import 'package:pankaj_portfolio/sections/footer/footer_section.dart';
 import 'package:pankaj_portfolio/sections/menu/bloc/nav_bloc.dart';
 import 'package:pankaj_portfolio/sections/menu/portfolio_appbar.dart';
 import 'package:pankaj_portfolio/sections/menu/widgets/mobile/mobile_drawer_widget.dart';
+import 'package:pankaj_portfolio/sections/projects/presentation/bloc/projects_bloc.dart';
+import 'package:pankaj_portfolio/sections/projects/presentation/bloc/projects_event.dart';
 import 'package:pankaj_portfolio/sections/projects/presentation/projects_section.dart';
 import 'package:pankaj_portfolio/sections/skills/skills_section.dart';
 import 'core/theme/theme_bloc.dart';
@@ -43,6 +45,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => NavBloc()),
         BlocProvider(create: (_) => ThemeBloc()),
         BlocProvider(create: (_) => di.sl<ContactBloc>()),
+        BlocProvider(create: (_) => di.sl<ProjectsBloc>()..add(FetchProjectsEvent())),
       ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {

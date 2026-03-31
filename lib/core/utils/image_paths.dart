@@ -15,6 +15,10 @@ class ImagePaths {
   static const cIcDAutomation = 'assets/svg/ci_cd_automation.svg';
   static const favourite = 'assets/svg/favourite.svg';
 
+  static const playArrow = 'assets/svg/play_arrow.svg';
+  static const android = 'assets/svg/android.svg';
+  static const apple = 'assets/svg/apple.svg';
+
   // PNG images here....
   static const profileImg = 'assets/profile.webp';
 }

@@ -31,7 +31,7 @@
       "Powered by The Knowledge",
       "Accessible for all"
     ],
-    "platform": ["Android", "iOS"],
+    "platforms": ["Android", "iOS"],
     "playStoreUrl": "https://play.google.com/store/apps/details?id=taxiappuk.passenger",
     "appStoreUrl": "https://apps.apple.com/gb/app/taxiapp-uk-london-black-cab/id1639547043",
     "featured": true,
@@ -41,8 +41,8 @@
     "title": "Taxiapp UK Driver",
     "shortDescription": "Driver-owned London black taxi app offering profit sharing, voting rights, and flexible job options.",
     "description": "Taxiapp is a driver-focused London black taxi platform designed to give drivers more control and better earnings. Unlike traditional ride-hailing services, drivers keep most of the fare while operating exclusively with licensed black taxis.\n\nAs part-owners of the platform, drivers benefit from a profit-sharing model through the Driver Reward Scheme and receive voting rights on major decisions such as commission changes. The app provides flexibility with both pre-booked and e-hail job options, allowing drivers to choose how they work.\n\nBuilt and operated by cab drivers, Taxiapp aims to strengthen the trade by offering a fair, transparent, and driver-first ecosystem.",
-    "banner": "https://your-banner-url",
-    "thumbnail": "https://your-thumbnail-url",
+    "banner": "https://raw.githubusercontent.com/pankajmangal/portfolio-assets/main/taxi_uk_driver.webp",
+    "thumbnail": "",
     "technologies": [
       "Flutter",
       "Dart",
@@ -70,7 +70,7 @@
       "Voting rights",
       "Flexible jobs"
     ],
-    "platform": ["Android", "iOS"],
+    "platforms": ["Android", "iOS"],
     "playStoreUrl": "https://play.google.com/store/apps/details?id=taxiappuk.driver",
     "appStoreUrl": "https://apps.apple.com/in/app/taxiapp-uk-driver/id1639547207",
     "featured": false,
@@ -80,8 +80,8 @@
     "title": "PayMaya",
     "shortDescription": "All-in-one digital wallet and banking app for payments, transfers, savings, and online shopping.",
     "description": "PayMaya (now Maya) is an all-in-one digital wallet and banking application that enables users to send money, pay bills, shop online, and manage finances in a single platform. The app supports QR payments, instant transfers, mobile load purchases, and secure online transactions. Users can also access savings features, virtual and physical cards, and other financial services. Designed for convenience and security, PayMaya simplifies everyday financial activities through a modern digital banking experience.",
-    "banner": "https://your-banner-url",
-    "thumbnail": "https://your-thumbnail-url",
+    "banner": "https://raw.githubusercontent.com/pankajmangal/portfolio-assets/main/maya_cards.webp",
+    "thumbnail": "",
     "technologies": [
       "Flutter",
       "Dart",
@@ -110,7 +110,7 @@
       "QR payments",
       "Digital banking"
     ],
-    "platform": ["Android", "iOS"],
+    "platforms": ["Android", "iOS"],
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.paymaya",
     "appStoreUrl": "https://apps.apple.com/us/app/maya-savings-loans-cards/id991673877",
     "featured": true,

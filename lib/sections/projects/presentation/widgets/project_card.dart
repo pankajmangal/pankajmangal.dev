@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-
-import '../../data/model/project_model.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
+import 'package:pankaj_portfolio/core/utils/app_constants.dart';
+import 'package:pankaj_portfolio/core/utils/image_paths.dart';
+import 'package:pankaj_portfolio/sections/projects/domain/entity/project_entity.dart';
+import 'package:pankaj_portfolio/widgets/buttons/gradient_button.dart';
 
 class ProjectCard extends StatefulWidget {
-  final ProjectModel project;
+  final ProjectEntity project;
 
   const ProjectCard({super.key, required this.project});
 
@@ -38,21 +42,19 @@ class _ProjectCardState extends State<ProjectCard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            /// IMAGE
+            // buildPlatformBadges(widget.project.platforms),
+            // const SizedBox(height: 12),
             ClipRRect(
               borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(16),
               ),
               child: Image.network(
-                widget.project.image,
+                widget.project.banner,
                 height: 200,
                 width: double.infinity,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             ),
-
-            /// CONTENT
             Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
@@ -71,16 +73,25 @@ class _ProjectCardState extends State<ProjectCard> {
 
                   Text(
                     widget.project.description,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(color: Colors.grey),
                   ),
 
                   const SizedBox(height: 16),
 
-                  /// TECH TAGS
+
+                  buildHighlights(widget.project.highlights),
+
+                  const SizedBox(height: 12),
+
+                  buildFeatures(widget.project.features),
+
+                  const SizedBox(height: 12),
                   Wrap(
                     spacing: 8,
                     runSpacing: 8,
-                    children: widget.project.tech
+                    children: widget.project.technologies
                         .map(
                           (e) => Container(
                         padding: const EdgeInsets.symmetric(
@@ -106,13 +117,21 @@ class _ProjectCardState extends State<ProjectCard> {
                   /// BUTTONS
                   Row(
                     children: [
-                      if (widget.project.playUrl != null)
-                        _storeButton("Play Store"),
+                      if (widget.project.playStoreUrl.isNotEmpty)
+                        GradientButton(
+                          text: 'Play Store',
+                          icon: ImagePaths.android,
+                          onTap: () => openLink(widget.project.playStoreUrl),
+                        ),
 
-                      const SizedBox(width: 10),
+                      const SizedBox(width: 12),
 
-                      if (widget.project.appStoreUrl != null)
-                        _storeButton("App Store"),
+                      if (widget.project.appStoreUrl.isNotEmpty)
+                        GradientButton(
+                          text: 'App Store',
+                          icon: ImagePaths.apple,
+                          onTap: () => openLink(widget.project.appStoreUrl),
+                        ),
                     ],
                   )
                 ],
@@ -124,20 +143,78 @@ class _ProjectCardState extends State<ProjectCard> {
     );
   }
 
-  Widget _storeButton(String title) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.blue),
-      ),
-      child: Text(
-        title,
-        style: const TextStyle(
-          color: Colors.blue,
-          fontWeight: FontWeight.w500,
+  Widget buildPlatformBadges(List<String> platforms) {
+    return Wrap(
+      spacing: 8,
+      children: platforms.map((e) {
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+          decoration: BoxDecoration(
+            color: Colors.black87,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Text(
+            e,
+            style: const TextStyle(color: Colors.white, fontSize: 12),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget buildHighlights(List<String> highlights) {
+    return Wrap(
+      spacing: 6,
+      runSpacing: 6,
+      children: highlights.map((e) {
+        return Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+          decoration: BoxDecoration(
+            color: const Color(0xffEEF2FF),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Text(
+            e,
+            style: const TextStyle(
+              fontSize: 12,
+              color: Color(0xff3B82F6),
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget buildFeatures(List<String> features) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Key Features:',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 14,
+          ),
         ),
-      ),
+        const SizedBox(height: 6),
+        ...features.map(
+              (e) => Padding(
+            padding: const EdgeInsets.only(bottom: 4),
+            child: Row(
+              children: [
+                SvgPicture.asset(
+                  ImagePaths.playArrow,
+                  colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
+                  width: 16, height: 16,
+                ),
+                const SizedBox(width: 4),
+                Expanded(child: Text(e)),
+              ],
+            ),
+          ),
+        )
+      ],
     );
   }
 }
