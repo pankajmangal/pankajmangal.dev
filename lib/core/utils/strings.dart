@@ -56,16 +56,20 @@ class Strings {
 
   //H
   static const home = 'Home';
-  static const heroProfileContent = 'Senior Flutter Engineer with 8+ years in mobile development, '
-      'designing scalable cross-platform architectures and delivering '
-      'high-performance applications across Android, '
-      'iOS, and Web. Proven track record of improving app stability, '
-      'optimizing performance, and building products used by 500K+ users.';
+  static const heroProfileContent = 'Flutter Lead Engineer with 9+ years of '
+      'experience in mobile development, including 5+ years in Flutter, '
+      'specializing in designing scalable cross-platform architectures '
+      'and delivering high-performance applications across Android, iOS, and Web. '
+      'Proven track record of leading teams, driving end-to-end delivery, '
+      'improving release cycles by 40% through CI/CD automation, and '
+      'reducing production crash rates by 30%. Built and scaled products '
+      'used by 500K+ users, with a strong focus on clean architecture, '
+      'performance optimization, and system reliability.';
 
   //P
   static const projects = 'Projects';
   static const professionalExperiences = 'Experiences';
-  static const professionalExperienceDesc = '8+ Years Experience  |  500K+ Users  |  30% Crash Reduction  |  40% Faster Releases';
+  static const professionalExperienceDesc = '9+ Years Experience  |  500K+ Users  |  30% Crash Reduction  |  40% Faster Releases';
 
   //S
   static const skills = 'Skills';
@@ -73,7 +77,7 @@ class Strings {
   static const scrollToExplore = 'Scroll to explore';
   static const skillAndExpertise = 'Skills & Expertise';
   static const skillDescription = 'Comprehensive toolkit for building scalable Flutter applications';
-  static const seniorFlutterEngineer = 'Senior Flutter Engineer';
+  static const flutterLeadEngineer = 'Flutter Lead Engineer';
 
   //V
   static const viewProjects = 'View Projects';

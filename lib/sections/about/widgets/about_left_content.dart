@@ -16,9 +16,9 @@ class AboutLeftContent extends StatelessWidget {
           ),
           children: [
             'I\'m a '.highlight(),
-            'Senior Flutter Engineer'.highlight(isHighlight: true),
+            'Flutter Lead Engineer'.highlight(isHighlight: true),
             ' with '.highlight(),
-            '8+ years'.highlight(isHighlight: true),
+            '9+ years'.highlight(isHighlight: true),
             ' of experience in mobile development, including '.highlight(),
             '5+ years'.highlight(isHighlight: true),
             ' specializing in '.highlight(),

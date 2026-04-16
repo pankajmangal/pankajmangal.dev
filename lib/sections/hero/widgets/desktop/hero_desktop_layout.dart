@@ -76,7 +76,7 @@ class _HeroDesktopLayoutState extends State<HeroDesktopLayout> {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Text(
-            Strings.seniorFlutterEngineer,
+            Strings.flutterLeadEngineer,
             style: GoogleFonts.inter(
               color: AppColors.primary,
               fontWeight: FontWeight.w600,

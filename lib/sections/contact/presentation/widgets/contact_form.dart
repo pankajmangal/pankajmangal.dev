@@ -8,6 +8,7 @@ import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/contact/presentation/bloc/contact_bloc.dart';
 import 'package:pankaj_portfolio/sections/contact/presentation/bloc/contact_event.dart';
 import 'package:pankaj_portfolio/sections/contact/presentation/bloc/contact_state.dart';
+import 'package:pankaj_portfolio/widgets/buttons/gradient_button.dart';
 import 'package:pankaj_portfolio/widgets/dialog/success_dialog.dart';
 
 class ContactForm extends StatefulWidget {
@@ -125,6 +126,8 @@ class _ContactFormState extends State<ContactForm> {
                               : () => _submit(context),
                         ),
                 ),
+                const SizedBox(height: 30),
+                // GradientButton(text: 'Resume Download', icon: , onTap: onTap)
               ],
             ),
           ),

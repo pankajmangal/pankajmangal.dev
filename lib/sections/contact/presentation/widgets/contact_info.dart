@@ -89,7 +89,7 @@ class ContactInfo extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              buildBullet('8+ years mobile development experience (5+ years Flutter)'),
+              buildBullet('9+ years mobile development experience (5+ years Flutter)'),
               buildBullet('Clean architecture, scalable and maintainable codebases'),
               buildBullet('Performance optimization and crash reduction expertise'),
               buildBullet('CI/CD automation and production release management'),
