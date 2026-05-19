@@ -20,5 +20,5 @@ class ImagePaths {
   static const apple = 'assets/svg/apple.svg';
 
   // PNG images here....
-  static const profileImg = 'assets/profile.webp';
+  static const profileImg = 'assets/profile_img.webp';
 }
