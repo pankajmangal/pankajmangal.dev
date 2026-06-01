@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 
 class AppTheme {
@@ -15,10 +16,11 @@ class AppTheme {
         surfaceTintColor: AppColors.primary,
       )),
     scaffoldBackgroundColor: Colors.white,
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: Colors.black),
-      bodyMedium: TextStyle(color: Colors.black87),
-    ),
+    // textTheme: const TextTheme(
+    //   bodyLarge: TextStyle(color: Colors.black),
+    //   bodyMedium: TextStyle(color: Colors.black87),
+    // ),
+    textTheme: GoogleFonts.interTextTheme(),
     useMaterial3: true,
   );
 
@@ -30,10 +32,11 @@ class AppTheme {
       surface: Color(0xFF0F172A),
     ),
     scaffoldBackgroundColor: const Color(0xFF0F172A),
-    textTheme: const TextTheme(
-      bodyLarge: TextStyle(color: Colors.white),
-      bodyMedium: TextStyle(color: Colors.white70),
-    ),
+    // textTheme: const TextTheme(
+    //   bodyLarge: TextStyle(color: Colors.white),
+    //   bodyMedium: TextStyle(color: Colors.white70),
+    // ),
+      textTheme: GoogleFonts.interTextTheme(),
     useMaterial3: true
   );
 }

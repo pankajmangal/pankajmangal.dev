@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const primary = Color(0xFF2563EB);
+  // static const primary = Color(0xFF2563EB);
   static const darkText = Color(0xFF1F2937);
   static const lightText = Color(0xFF6B7280);
-  static const background = Color(0xFFF3F4F6);
+  // static const background = Color(0xFFF3F4F6);
   static const badgeBg = Color(0xFFDBEAFE);
   static const lightWhite = Color(0xFFF6F7FB);
 
@@ -15,4 +15,14 @@ class AppColors {
   static const greyColorShade200 = Color(0xFFE5E7EB);
 
   static const transparent = Colors.transparent;
+
+  static const primary = Color(0xFF4F46E5);
+  static const primaryLight = Color(0xFF6366F1);
+
+  static const heading = Color(0xFF111827);
+  static const body = Color(0xFF6B7280);
+
+  static const border = Color(0xFFE5E7EB);
+
+  static const background = Colors.white;
 }

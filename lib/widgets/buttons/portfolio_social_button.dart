@@ -31,22 +31,22 @@ class _PortfolioSocialButtonState extends State<PortfolioSocialButton> {
           transform: isHovered
               ? (Matrix4.identity()..scale(1.15))
               : Matrix4.identity(),
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: isHovered
-                ? AppColors
-                      .primary // hover color
-                : Colors.grey.withValues(alpha: .2),
-          ),
+          padding: const EdgeInsets.all(2),
+          // decoration: BoxDecoration(
+          //   shape: BoxShape.circle,
+          //   color: isHovered
+          //       ? AppColors
+          //             .primary // hover color
+          //       : Colors.grey.withValues(alpha: .2),
+          // ),
           child: SvgPicture.asset(
             widget.iconPath,
             colorFilter: ColorFilter.mode(
               isHovered ? Colors.white : Colors.grey,
               BlendMode.srcIn,
             ),
-            width: 24,
-            height: 24,
+            width: 20,
+            height: 20,
             fit: BoxFit.scaleDown,
           ),
         ),

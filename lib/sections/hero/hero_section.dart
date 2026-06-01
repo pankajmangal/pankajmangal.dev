@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/desktop/hero_desktop_layout.dart';
+import 'package:pankaj_portfolio/sections/hero/widgets/desktop/hero_new_desktop_layout.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/mobile/hero_mobile_layout.dart';
 
 class HeroSection extends StatefulWidget {
@@ -32,19 +33,25 @@ class _HeroSectionState extends State<HeroSection>
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        if (!context.isMobile && _wasMobile) {
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (Scaffold.of(context).isDrawerOpen) {
-              Navigator.of(context).pop();
-            }
-          });
-          _wasMobile = context.isMobile;
-        }
-        if (context.isMobile) return HeroMobileLayout(controller: _controller, animation: _animation);
-        return HeroDesktopLayout(controller: _controller, animation: _animation);
-      },
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 80,
+        vertical: 80,
+      ),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          if (!context.isMobile && _wasMobile) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (Scaffold.of(context).isDrawerOpen) {
+                Navigator.of(context).pop();
+              }
+            });
+            _wasMobile = context.isMobile;
+          }
+          if (context.isMobile) return HeroMobileLayout(controller: _controller, animation: _animation);
+          return HeroNewDesktopLayout();
+        },
+      ),
     );
   }
 
