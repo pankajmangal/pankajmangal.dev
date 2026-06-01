@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/desktop/hero_desktop_layout.dart';
-import 'package:pankaj_portfolio/sections/hero/widgets/desktop/hero_new_desktop_layout.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/mobile/hero_mobile_layout.dart';
 
 class HeroSection extends StatefulWidget {
@@ -49,7 +48,7 @@ class _HeroSectionState extends State<HeroSection>
             _wasMobile = context.isMobile;
           }
           if (context.isMobile) return HeroMobileLayout(controller: _controller, animation: _animation);
-          return HeroNewDesktopLayout();
+          return HeroDesktopLayout();
         },
       ),
     );

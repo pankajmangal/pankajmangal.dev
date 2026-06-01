@@ -4,7 +4,6 @@ import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
-import 'package:pankaj_portfolio/sections/menu/widgets/desktop/desktop_appbar_widget.dart';
 import 'package:pankaj_portfolio/sections/menu/widgets/desktop/desktop_portfolio_header.dart';
 import 'package:pankaj_portfolio/sections/menu/widgets/mobile/mobile_appbar_widget.dart';
 
@@ -20,7 +19,7 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     bool isMobile = context.isMobile;
     return isMobile ? AppBar(
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.whiteColor,
       elevation: 1,
       automaticallyImplyLeading: false,
       toolbarHeight: 80,

@@ -42,7 +42,7 @@ class _MobileDrawerWidgetState extends State<MobileDrawerWidget> {
               ],
             ),
           ),
-          Divider(color: AppColors.background,),
+          Divider(color: AppColors.whiteColor,),
           SizedBox(height: 24),
           Padding(
             padding: const EdgeInsets.only(left: 12.0),

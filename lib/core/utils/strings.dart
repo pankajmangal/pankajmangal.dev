@@ -41,6 +41,7 @@ class Strings {
 
   //D
   static const devName = '<Pankaj.dev />';
+  static const downloadCV = 'Download CV';
 
   //F
   static const footerDevNote = 'Building scalable cross-platform mobile applications with clean architecture and performance-first design.';
@@ -56,6 +57,7 @@ class Strings {
 
   //H
   static const home = 'Home';
+  static const hireMe = 'Hire me';
   static const heroProfileContent = 'Flutter Lead Engineer with 9+ years of '
       'experience in mobile development, including 5+ years in Flutter, '
       'specializing in designing scalable cross-platform architectures '
@@ -65,6 +67,9 @@ class Strings {
       'reducing production crash rates by 30%. Built and scaled products '
       'used by 500K+ users, with a strong focus on clean architecture, '
       'performance optimization, and system reliability.';
+
+  //O
+  static const openToLeadRole = 'Open to senior & lead roles';
 
   //P
   static const projects = 'Projects';

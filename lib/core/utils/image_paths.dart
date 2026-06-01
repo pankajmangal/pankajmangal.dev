@@ -19,6 +19,10 @@ class ImagePaths {
   static const android = 'assets/svg/android.svg';
   static const apple = 'assets/svg/apple.svg';
 
+  static const download = 'assets/svg/download.svg';
+  static const arrowForward = 'assets/svg/arrow_right.svg';
+  static const sparkles = 'assets/svg/sparkles.svg';
+
   // PNG images here....
   static const profileImg = 'assets/profile_img.webp';
 }

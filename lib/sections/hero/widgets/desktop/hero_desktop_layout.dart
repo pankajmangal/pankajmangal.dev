@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/app_constants.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
@@ -8,163 +8,248 @@ import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/social_links.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
-import 'package:pankaj_portfolio/sections/hero/widgets/hero_animated_text_widget.dart';
+import 'package:pankaj_portfolio/sections/hero/widgets/open_to_work_badge.dart';
+import 'package:pankaj_portfolio/sections/hero/widgets/stats_section.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_elevated_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_outline_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
-import 'package:pankaj_portfolio/widgets/indicator/scroll_indicator.dart';
 
-class HeroDesktopLayout extends StatefulWidget {
-  const HeroDesktopLayout({super.key, required this.controller, required this.animation});
+class HeroDesktopLayout extends StatelessWidget {
+  const HeroDesktopLayout({super.key});
 
-  final AnimationController controller;
-  final Animation<double> animation;
-
-  @override
-  State<HeroDesktopLayout> createState() => _HeroDesktopLayoutState();
-}
-
-class _HeroDesktopLayoutState extends State<HeroDesktopLayout> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      key: ScrollManager.heroKey,
-      height: context.height,
-      padding: EdgeInsets.symmetric(
-        horizontal: 80,
-      ),
-      color: AppColors.lightWhite,
-      child: SingleChildScrollView(
-        child: Column(
+    return Column(
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 60),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(child: _leftContent()),
-                const SizedBox(width: 60),
-                Expanded(child: _profileImage()),
-              ],
-            ),
-            const SizedBox(height: 30),
-            Text(
-              Strings.scrollToExplore,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
-                fontSize: Dimens.fontSize14,
-                color: Colors.grey[600],
-                height: 1.7,
+            Expanded(
+              flex: 6,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  OpenToWorkBadge(),
+                  const SizedBox(height: 30),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'I architect ',
+                          style: GoogleFonts.inter(
+                            fontSize: 64,
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.heading,
+                            height: 1.2,
+                          ),
+                        ),
+                    TextSpan(
+                      text: 'scalable',
+                      style: GoogleFonts.inter(
+                        fontSize: 64,
+                        fontWeight: FontWeight.w800,
+                        height: 1.4,
+                        foreground: Paint()
+                          ..shader = const LinearGradient(
+                            colors: [
+                              Color(0xFF4F46E5),
+                              Color(0xFF6366F1),
+                              Color(0xFF8B5CF6),
+                            ],
+                          ).createShader(
+                            const Rect.fromLTWH(
+                              0,
+                              0,
+                              500,
+                              100,
+                            ),
+                          ),
+                      ),
+                    ),
+                        TextSpan(
+                          text: '\nmobile experiences.',
+                          style: GoogleFonts.inter(
+                            fontSize: 64,
+                            fontWeight: FontWeight.w800,
+                            color: AppColors.heading,
+                            height: 1.2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Hi, I\'m ',
+                          style: GoogleFonts.inter(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.lightText,
+                            height: 1.8,
+                          ),
+                        ),
+                        TextSpan(
+                          text: 'Pankaj Mangal',
+                          style: GoogleFonts.inter(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.blackColor,
+                            height: 1.8,
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' — a Flutter Lead Engineer with 9+ years in mobile, shipping high-performance apps used by 500K+ users across iOS, Android & Web.',
+                          style: GoogleFonts.inter(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.lightText,
+                            height: 1.8,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  Wrap(
+                    alignment: WrapAlignment.start,
+                    spacing: 16,
+                    runSpacing: 12,
+                    children: [
+                      PortfolioElevatedButton(
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(Strings.viewProjects, style: TextStyle(color: AppColors.whiteColor,
+                                fontSize: Dimens.fontSize14)),
+                            SizedBox(width: Dimens.padding12,),
+                            SvgPicture.asset(ImagePaths.arrowForward,
+                              colorFilter: ColorFilter.mode(
+                                Colors.white,
+                                BlendMode.srcIn,
+                              ),
+                              width: 18,
+                              height: 18,
+                              fit: BoxFit.scaleDown,)
+                          ],
+                        ),
+                        onPressed: () =>
+                            ScrollManager.scrollTo(ScrollManager.projectsKey),
+                      ),
+                      PortfolioOutlineButton(
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            SvgPicture.asset(ImagePaths.download,
+                              colorFilter: ColorFilter.mode(
+                                Colors.black,
+                                BlendMode.srcIn,
+                              ),
+                              width: 18,
+                              height: 18,
+                              fit: BoxFit.scaleDown,),
+                            SizedBox(width: Dimens.padding12,),
+                            Text(Strings.downloadCV, style: TextStyle(color: AppColors.blackColor,
+                                fontSize: Dimens.fontSize14, fontWeight: FontWeight.w500)),
+                          ],
+                        ),
+                        onPressed: () =>
+                            ScrollManager.scrollTo(ScrollManager.contactKey),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 30),
+                  Wrap(
+                    alignment: WrapAlignment.start,
+                    spacing: 10,
+                    children: [
+                      PortfolioSocialButton(
+                        iconPath: ImagePaths.github,
+                        onTap: () => openLink(SocialLinks.githubLink),
+                      ),
+                      PortfolioSocialButton(
+                        iconPath: ImagePaths.linkedin,
+                        onTap: () => openLink(SocialLinks.linkedinLink),
+                      ),
+                      PortfolioSocialButton(
+                        iconPath: ImagePaths.mail,
+                        onTap: () => openLink(SocialLinks.emailLink),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: 16),
-            ScrollIndicator(onTap: () => ScrollManager.scrollTo(ScrollManager.aboutKey)),
-          ],
-        ),
-      ),
-    );
-  }
+            const SizedBox(width: 80),
+            Expanded(
+              flex: 5,
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Container(
+                    height: 650,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(32),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.primary.withValues(alpha: .15),
+                          blurRadius: 50,
+                        ),
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(32),
+                      child: Image.asset(ImagePaths.profileImg, fit: BoxFit.cover),
+                    ),
+                  ),
 
-  Widget _leftContent() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
-          decoration: BoxDecoration(
-            color: const Color(0xFFE0E7FF),
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Text(
-            Strings.flutterLeadEngineer,
-            style: GoogleFonts.inter(
-              color: AppColors.primary,
-              fontWeight: FontWeight.w600,
+                  Positioned(
+                    bottom: -30,
+                    left: -30,
+                    child: Container(
+                      width: 250,
+                      padding: const EdgeInsets.all(24),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(24),
+                        boxShadow: [
+                          BoxShadow(color: Colors.black12, blurRadius: 20),
+                        ],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text('CURRENTLY', style: TextStyle(letterSpacing: 0.8,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,)),
+                          SizedBox(height: 5),
+                          Text(
+                            'Flutter Lead Engineer',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(height: 2),
+                          Text('India · Remote-friendly',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ),
-        const SizedBox(height: 30),
-        Text(
-          Strings.greetingText,
-          textAlign: TextAlign.start,
-          style: GoogleFonts.inter(
-            fontSize: Dimens.fontSize42,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const SizedBox(height: 10),
-        HeroAnimatedTextWidget(heroFontSize: Dimens.fontSize24,),
-        const SizedBox(height: 20),
-        SizedBox(
-          width: 520,
-          child: Text(
-            Strings.heroProfileContent,
-            textAlign: TextAlign.start,
-            style: GoogleFonts.inter(
-              fontSize: Dimens.fontSize16,
-              color: Colors.grey[600],
-              height: 1.7,
-            ),
-          ),
-        ),
-        const SizedBox(height: 30),
-        Wrap(
-          alignment: WrapAlignment.start,
-          spacing: 16,
-          runSpacing: 12,
-          children: [
-            PortfolioElevatedButton(text: Strings.viewProjects, onPressed: () => ScrollManager.scrollTo(ScrollManager.projectsKey),),
-            PortfolioOutlineButton(text: Strings.contactMe, onPressed: () => ScrollManager.scrollTo(ScrollManager.contactKey),),
           ],
         ),
-        const SizedBox(height: 30),
-        Wrap(
-          alignment: WrapAlignment.start,
-          spacing: 12,
-          children: [
-            PortfolioSocialButton(iconPath: ImagePaths.github, onTap: () => openLink(SocialLinks.githubLink)),
-            PortfolioSocialButton(iconPath: ImagePaths.linkedin, onTap: () => openLink(SocialLinks.linkedinLink)),
-            PortfolioSocialButton(iconPath: ImagePaths.mail, onTap: () => openLink(SocialLinks.emailLink)),
-          ],
-        ),
+        const SizedBox(height: 100),
+        StatsSection()
       ],
     );
-  }
-
-  Widget _profileImage() {
-    double size = 360;
-
-    return Center(
-      child: AnimatedBuilder(
-        animation: widget.controller,
-        builder: (context, child) {
-          return Container(
-            width: size,
-            height: size,
-            padding: const EdgeInsets.all(6),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.blue.withValues(alpha: .25),
-                  blurRadius: 40 * widget.controller.value,
-                  spreadRadius: 10 * widget.controller.value,
-                )
-              ],
-              image: const DecorationImage(
-                image: AssetImage(ImagePaths.profileImg),
-                fit: BoxFit.cover,
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    widget.controller.dispose();
   }
 }

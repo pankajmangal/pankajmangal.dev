@@ -7,6 +7,10 @@ class Dimens {
   static const borderWidth4 = 4.0;
 
   //C
+  static const circularRadius2 = 2.0;
+  static const circularRadius4 = 4.0;
+  static const circularRadius6 = 6.0;
+  static const circularRadius8 = 8.0;
   static const circularRadius10 = 10.0;
   static const circularRadius12 = 12.0;
   static const circularRadius14 = 14.0;
@@ -51,6 +55,11 @@ class Dimens {
   static const fontSize72 = 72.0;
   static const fontSize96 = 96.0;
   static const fontSize128 = 128.0;
+
+  //I
+  static const iconSize16 = 16.0;
+  static const iconSize20 = 20.0;
+  static const iconSize24 = 24.0;
 
   //P
   static const padding10 = 10.0;

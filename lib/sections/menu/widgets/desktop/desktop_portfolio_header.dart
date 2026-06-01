@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/app_constants.dart';
+import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/social_links.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/menu/widgets/nav_item.dart';
+import 'package:pankaj_portfolio/widgets/buttons/portfolio_elevated_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
+import 'package:pankaj_portfolio/widgets/gradients/gradient_text.dart';
 
 class DesktopPortfolioHeader extends StatelessWidget {
   const DesktopPortfolioHeader({super.key});
@@ -29,8 +32,6 @@ class DesktopPortfolioHeader extends StatelessWidget {
       ),
       child: Row(
         children: [
-
-          /// Logo
           Expanded(
             flex: 2,
             child: Row(
@@ -39,7 +40,7 @@ class DesktopPortfolioHeader extends StatelessWidget {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: "<",
+                        text: '<',
                         style: GoogleFonts.inter(
                           color: AppColors.heading,
                           fontSize: 16,
@@ -47,15 +48,30 @@ class DesktopPortfolioHeader extends StatelessWidget {
                         ),
                       ),
                       TextSpan(
-                        text: "pankaj",
+                        text: 'pankaj',
                         style: GoogleFonts.inter(
-                          color: AppColors.primary,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
+                          foreground: Paint()
+                            ..shader = const LinearGradient(
+                              colors: [
+                                Color(0xFF4F46E5),
+                                Color(0xFF6366F1),
+                                Color(0xFF8B5CF6),
+                              ],
+                            ).createShader(
+                              const Rect.fromLTWH(
+                                0,
+                                0,
+                                600,
+                                120,
+                              ),
+                            ),
                         ),
                       ),
+                      // WidgetSpan(child: GradientText(text: 'pankaj', fontSize: Dimens.fontSize16, fontWeight: FontWeight.w600)),
                       TextSpan(
-                        text: ".dev />",
+                        text: '.dev />',
                         style: GoogleFonts.inter(
                           color: AppColors.heading,
                           fontSize: 16,
@@ -68,8 +84,6 @@ class DesktopPortfolioHeader extends StatelessWidget {
               ],
             ),
           ),
-
-          /// Menu
           Expanded(
             flex: 5,
             child: Row(
@@ -94,8 +108,6 @@ class DesktopPortfolioHeader extends StatelessWidget {
               ],
             ),
           ),
-
-          /// Actions
           Expanded(
             flex: 2,
             child: Row(
@@ -105,24 +117,11 @@ class DesktopPortfolioHeader extends StatelessWidget {
                 const SizedBox(width: 6),
                 PortfolioSocialButton(iconPath: ImagePaths.linkedin, onTap: () => openLink(SocialLinks.linkedinLink)),
                 const SizedBox(width: 12),
-                SizedBox(
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                      AppColors.primary,
-                      shape:
-                      RoundedRectangleBorder(
-                        borderRadius:
-                        BorderRadius.circular(
-                            14),
-                      ),
-                    ),
-                    child: const Text(
-                      "Hire me",
-                    ),
-                  ),
+                PortfolioElevatedButton(
+                  child: Text(Strings.hireMe, style: TextStyle(color: AppColors.whiteColor,
+                      fontSize: Dimens.fontSize14)),
+                  onPressed: () =>
+                      ScrollManager.scrollTo(ScrollManager.projectsKey),
                 ),
               ],
             ),

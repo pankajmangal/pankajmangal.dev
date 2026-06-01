@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
+      backgroundColor: AppColors.whiteColor,
       appBar: PortfolioAppBar(controller: _controller,),
       endDrawer: Drawer(
         child: MobileDrawerWidget(controller: _controller),

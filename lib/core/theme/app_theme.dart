@@ -13,13 +13,9 @@ class AppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
-        surfaceTintColor: AppColors.primary,
+        surfaceTintColor: AppColors.whiteColor,
       )),
     scaffoldBackgroundColor: Colors.white,
-    // textTheme: const TextTheme(
-    //   bodyLarge: TextStyle(color: Colors.black),
-    //   bodyMedium: TextStyle(color: Colors.black87),
-    // ),
     textTheme: GoogleFonts.interTextTheme(),
     useMaterial3: true,
   );
