@@ -12,22 +12,11 @@ class HeroSection extends StatefulWidget {
 
 class _HeroSectionState extends State<HeroSection>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
   bool _wasMobile = true;
 
   @override
   void initState() {
     super.initState();
-
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 900),
-    )..repeat(reverse: true);
-
-    _animation = Tween<double>(begin: 0, end: 12).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
   }
 
   @override
@@ -47,7 +36,7 @@ class _HeroSectionState extends State<HeroSection>
             });
             _wasMobile = context.isMobile;
           }
-          if (context.isMobile) return HeroMobileLayout(controller: _controller, animation: _animation);
+          if (context.isMobile) return HeroMobileLayout();
           return HeroDesktopLayout();
         },
       ),
@@ -57,6 +46,5 @@ class _HeroSectionState extends State<HeroSection>
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
   }
 }

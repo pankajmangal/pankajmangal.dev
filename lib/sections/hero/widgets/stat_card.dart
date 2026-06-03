@@ -5,11 +5,13 @@ import 'package:pankaj_portfolio/sections/hero/models/stat_item.dart';
 
 class StatCard extends StatelessWidget {
   final StatItem stat;
-  final bool showDivider;
+  final bool showRightBorder;
+  final bool showBottomBorder;
 
   const StatCard({super.key,
     required this.stat,
-    required this.showDivider,
+    this.showRightBorder = false,
+    this.showBottomBorder = false,
   });
 
   @override
@@ -17,13 +19,18 @@ class StatCard extends StatelessWidget {
     return Container(
       height: 140,
       decoration: BoxDecoration(
-        border: showDivider
-            ? const Border(
-          right: BorderSide(
+        border: Border(
+          right: showRightBorder
+              ? const BorderSide(
             color: Color(0xFFE5E7EB),
-          ),
-        )
-            : null,
+          )
+              : BorderSide.none,
+          bottom: showBottomBorder
+              ? const BorderSide(
+            color: Color(0xFFE5E7EB),
+          )
+              : BorderSide.none,
+        ),
       ),
       child: Column(
         mainAxisAlignment:
@@ -32,7 +39,7 @@ class StatCard extends StatelessWidget {
           Text(
             stat.value,
             style: GoogleFonts.inter(
-              fontSize: 36,
+              fontSize: 28,
               fontWeight: FontWeight.w600,
               color: AppColors.primary,
               height: 1.2,

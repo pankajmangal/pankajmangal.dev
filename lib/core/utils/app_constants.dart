@@ -4,6 +4,7 @@ import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/about/model/card_model.dart';
+import 'package:pankaj_portfolio/sections/hero/models/stat_item.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 final items = [
@@ -15,6 +16,25 @@ final items = [
   CardData(Strings.aboutCardTitle6, Strings.aboutCardDesc6, ImagePaths.productThinking),
   CardData(Strings.aboutCardTitle7, Strings.aboutCardDesc7, ImagePaths.cIcDAutomation),
   CardData(Strings.aboutCardTitle8, Strings.aboutCardDesc8, ImagePaths.favourite),
+];
+
+const statsData = [
+  StatItem(
+    value: '9+',
+    label: 'Years in Mobile',
+  ),
+  StatItem(
+    value: '5+',
+    label: 'Years in Flutter',
+  ),
+  StatItem(
+    value: '500K+',
+    label: 'Users Reached',
+  ),
+  StatItem(
+    value: '40%',
+    label: 'Faster Releases',
+  ),
 ];
 
 EdgeInsets getPadding(BuildContext context) {

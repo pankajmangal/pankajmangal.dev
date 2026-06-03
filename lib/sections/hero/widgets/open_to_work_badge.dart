@@ -24,17 +24,11 @@ class _OpenToWorkBadgeState extends State<OpenToWorkBadge>
   }
 
   @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 10,
+        horizontal: 16,
+        vertical: 8,
       ),
       decoration: BoxDecoration(
         color: AppColors.lightWhite,
@@ -90,11 +84,11 @@ class _OpenToWorkBadgeState extends State<OpenToWorkBadge>
               },
             ),
           ),
-          const SizedBox(width: 10),
+          const SizedBox(width: 8),
           const Text(
             Strings.openToLeadRole,
             style: TextStyle(
-              fontSize: 14,
+              fontSize: 12,
               fontWeight: FontWeight.w500,
               color: Color(0xFF6B7280),
               height: 1,
@@ -103,5 +97,11 @@ class _OpenToWorkBadgeState extends State<OpenToWorkBadge>
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
