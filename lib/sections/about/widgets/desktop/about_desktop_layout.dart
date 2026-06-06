@@ -6,7 +6,10 @@ import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/about/widgets/about_card.dart';
+import 'package:pankaj_portfolio/sections/about/widgets/about_header_widget.dart';
 import 'package:pankaj_portfolio/sections/about/widgets/about_left_content.dart';
+import 'package:pankaj_portfolio/sections/about/widgets/desktop/feature_card_desktop_widget.dart';
+import 'package:pankaj_portfolio/sections/about/widgets/desktop/skills_toolkit_desktop_widget.dart';
 
 class AboutDesktopLayout extends StatelessWidget {
   const AboutDesktopLayout({super.key});
@@ -19,64 +22,17 @@ class AboutDesktopLayout extends StatelessWidget {
         horizontal: 80,
         vertical: 60,
       ),
-      color: AppColors.lightWhite,
+      color: AppColors.whiteColor,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            Strings.aboutMe,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
-              fontSize: Dimens.fontSize36,
-              fontWeight: FontWeight.w700,
-              color: AppColors.darkText,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Container(
-            width: 80,
-            height: 4,
-            decoration: BoxDecoration(
-              color: AppColors.primary,
-              borderRadius: BorderRadius.circular(10),
-            ),
-          ),
-          const SizedBox(height: 40),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(child: AboutLeftContent()),
-              const SizedBox(width: 40),
-              Expanded(
-                child: _cardGrid(),
-              ),
-            ],
-          ),
+          AboutHeaderWidget(),
+          const SizedBox(height: 64),
+          FeatureCardDesktopWidget(),
+          const SizedBox(height: 48),
+          SkillsToolkitDesktopWidget(),
         ],
       ),
-    );
-  }
-
-  Widget _cardGrid() {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: items.length,
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 360,
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
-        mainAxisExtent: 240,
-      ),
-      itemBuilder: (context, index) {
-        final item = items[index];
-
-        return AboutCard(
-          title: item.title,
-          description: item.desc,
-          icon: item.icon,
-        );
-      },
     );
   }
 }

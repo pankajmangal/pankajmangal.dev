@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/app_constants.dart';
+import 'package:pankaj_portfolio/core/utils/app_gradients.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
@@ -51,25 +52,14 @@ class DesktopPortfolioHeader extends StatelessWidget {
                         text: 'pankaj',
                         style: GoogleFonts.inter(
                           fontSize: 16,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: -0.3,
                           foreground: Paint()
-                            ..shader = const LinearGradient(
-                              colors: [
-                                Color(0xFF4F46E5),
-                                Color(0xFF6366F1),
-                                Color(0xFF8B5CF6),
-                              ],
-                            ).createShader(
-                              const Rect.fromLTWH(
-                                0,
-                                0,
-                                600,
-                                120,
-                              ),
+                            ..shader = AppGradients.primary.createShader(
+                              const Rect.fromLTWH(0, 0, 140, 30),
                             ),
                         ),
                       ),
-                      // WidgetSpan(child: GradientText(text: 'pankaj', fontSize: Dimens.fontSize16, fontWeight: FontWeight.w600)),
                       TextSpan(
                         text: '.dev />',
                         style: GoogleFonts.inter(

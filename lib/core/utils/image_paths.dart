@@ -8,7 +8,6 @@ class ImagePaths {
 
   static const scalableArchitecture = 'assets/svg/scalable_architecture.svg';
   static const crossPlatform = 'assets/svg/cross_platform.svg';
-  static const performance = 'assets/svg/performance.svg';
   static const stateManagement = 'assets/svg/state_management.svg';
   static const apiIntegration = 'assets/svg/api_integration.svg';
   static const productThinking = 'assets/svg/product_thinking.svg';
@@ -22,6 +21,11 @@ class ImagePaths {
   static const download = 'assets/svg/download.svg';
   static const arrowForward = 'assets/svg/arrow_right.svg';
   static const sparkles = 'assets/svg/sparkles.svg';
+
+  static const architecture = 'assets/svg/architecture.svg';
+  static const leadership = 'assets/svg/leadership.svg';
+  static const performance = 'assets/svg/performance.svg';
+  static const aiAutomation = 'assets/svg/ai_automation.svg';
 
   // PNG images here....
   static const profileImg = 'assets/profile_img.webp';

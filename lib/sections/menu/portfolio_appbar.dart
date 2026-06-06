@@ -23,7 +23,7 @@ class PortfolioAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 1,
       automaticallyImplyLeading: false,
       toolbarHeight: 80,
-      titleSpacing: 80,
+      titleSpacing: 30,
       centerTitle: false,
       title: Text(
         Strings.devName,

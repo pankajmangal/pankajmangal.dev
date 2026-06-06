@@ -90,14 +90,19 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       backgroundColor: AppColors.whiteColor,
       appBar: PortfolioAppBar(controller: _controller,),
       endDrawer: Drawer(
-        child: MobileDrawerWidget(controller: _controller),
-      ),
+        width: MediaQuery.of(context).size.width * .78,
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+    child: MobileDrawerWidget(
+    controller: _controller,
+    ),
+    ),
       body: SingleChildScrollView(
         controller: ScrollManager.controller,
         child: Column(
-          children: const [
+          children: [
             HeroSection(),
-            // AboutSection(),
+            AboutSection(),
             // SkillsSection(),
             // ExperienceSection(),
             // HighlightsSection(),

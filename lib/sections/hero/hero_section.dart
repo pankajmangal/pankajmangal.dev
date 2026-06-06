@@ -3,21 +3,9 @@ import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/desktop/hero_desktop_layout.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/mobile/hero_mobile_layout.dart';
 
-class HeroSection extends StatefulWidget {
-  const HeroSection({super.key});
-
-  @override
-  State<HeroSection> createState() => _HeroSectionState();
-}
-
-class _HeroSectionState extends State<HeroSection>
-    with SingleTickerProviderStateMixin {
+class HeroSection extends StatelessWidget {
+  HeroSection({super.key});
   bool _wasMobile = true;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +29,5 @@ class _HeroSectionState extends State<HeroSection>
         },
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 }
