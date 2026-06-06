@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
-import 'package:pankaj_portfolio/core/utils/app_constants.dart';
-import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
-import 'package:pankaj_portfolio/core/utils/strings.dart';
-import 'package:pankaj_portfolio/sections/about/widgets/about_card.dart';
 import 'package:pankaj_portfolio/sections/about/widgets/about_header_widget.dart';
-import 'package:pankaj_portfolio/sections/about/widgets/about_left_content.dart';
 import 'package:pankaj_portfolio/sections/about/widgets/desktop/feature_card_desktop_widget.dart';
 import 'package:pankaj_portfolio/sections/about/widgets/desktop/skills_toolkit_desktop_widget.dart';
 
@@ -31,6 +25,7 @@ class AboutDesktopLayout extends StatelessWidget {
           FeatureCardDesktopWidget(),
           const SizedBox(height: 48),
           SkillsToolkitDesktopWidget(),
+          const SizedBox(height: 60),
         ],
       ),
     );

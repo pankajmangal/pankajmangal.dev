@@ -24,7 +24,7 @@ class HeroDesktopLayout extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   OpenToWorkBadge(),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 8),
                   HeroHeadingWidget(),
                   const SizedBox(height: 30),
                   HeroDescriptionWidget(),

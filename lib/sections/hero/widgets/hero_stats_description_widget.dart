@@ -13,7 +13,7 @@ class HeroStatsDescriptionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
+      mainAxisSize: MainAxisSize.min,
       children: [
         SvgPicture.asset(
           ImagePaths.sparkles,
@@ -26,14 +26,12 @@ class HeroStatsDescriptionWidget extends StatelessWidget {
           fit: BoxFit.scaleDown,
         ),
         const SizedBox(width: 8),
-        Expanded(
-          child: Text(
-            'Trusted by teams shipping products to millions.',
-            style: GoogleFonts.inter(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: AppColors.lightText,
-            ),
+        Text(
+          'Trusted by teams shipping products to millions.',
+          style: GoogleFonts.inter(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: AppColors.lightText,
           ),
         ),
       ],

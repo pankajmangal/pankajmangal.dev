@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             HeroSection(),
             AboutSection(),
             // SkillsSection(),
-            // ExperienceSection(),
+            ExperienceSection(),
             // HighlightsSection(),
             // ProjectsSection(),
             // PortfolioSection(),

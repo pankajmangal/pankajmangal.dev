@@ -10,6 +10,7 @@ class HeroDesktopStatsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
           constraints: const BoxConstraints(
@@ -44,6 +45,7 @@ class HeroDesktopStatsWidget extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         HeroStatsDescriptionWidget(fontSize: Dimens.fontSize14,),
+        const SizedBox(height: 60),
       ],
     );
   }
