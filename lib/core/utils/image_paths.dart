@@ -26,6 +26,7 @@ class ImagePaths {
   static const leadership = 'assets/svg/leadership.svg';
   static const performance = 'assets/svg/performance.svg';
   static const aiAutomation = 'assets/svg/ai_automation.svg';
+  static const work = 'assets/svg/work.svg';
 
   // PNG images here....
   static const profileImg = 'assets/profile_img.webp';

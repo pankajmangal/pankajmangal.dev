@@ -10,7 +10,7 @@ class AboutHeaderWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "ABOUT",
+          'ABOUT',
           style: GoogleFonts.inter(
             fontSize: 12,
             letterSpacing: 2,
@@ -23,7 +23,7 @@ class AboutHeaderWidget extends StatelessWidget {
         SizedBox(
           width: 900,
           child: Text(
-            "Building scalable mobile platforms, leading engineering teams, and delivering measurable outcomes.",
+            'Building scalable mobile platforms, leading engineering teams, and delivering measurable outcomes.',
             style: GoogleFonts.inter(
               fontSize: 32,
               height: 1.05,
@@ -36,11 +36,11 @@ class AboutHeaderWidget extends StatelessWidget {
         SizedBox(
           width: 900,
           child: Text(
-            "I help companies build scalable mobile products across Android,"
+            'I help companies build scalable mobile products across Android,'
           " iOS and Web. \n\nOver the last 9+ years, I've architected "
-    "cross-platform applications, led engineering teams, and delivered products"
-    " used by hundreds of thousands of users. My focus is on clean architecture, "
-    "performance optimization, CI/CD automation, and creating maintainable "
+    'cross-platform applications, led engineering teams, and delivered products'
+    ' used by hundreds of thousands of users. My focus is on clean architecture, '
+    'performance optimization, CI/CD automation, and creating maintainable '
     "systems that help teams move faster. \n\nBeyond mobile development, I'm actively expanding into Python backend development and AI-powered applications, combining modern engineering practices with emerging technologies.",
             style: GoogleFonts.inter(
               fontSize: 16,

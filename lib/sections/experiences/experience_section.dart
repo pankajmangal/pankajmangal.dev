@@ -5,6 +5,7 @@ import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/experiences/widgets/desktop/experience_desktop_tile_layout.dart';
+import 'package:pankaj_portfolio/sections/experiences/widgets/desktop/experience_desktop_widget.dart';
 import 'package:pankaj_portfolio/sections/experiences/widgets/mobile/experience_mobile_tile_layout.dart';
 
 class ExperienceSection extends StatelessWidget {
@@ -78,7 +79,8 @@ class ExperienceSection extends StatelessWidget {
           ],
         );
         }
-        return Column(
+        return ExperienceDesktopWidget();
+        /*return Column(
           children: const [
             Text(
               Strings.professionalExperiences,
@@ -138,7 +140,7 @@ class ExperienceSection extends StatelessWidget {
               tech: ['Flutter', 'Flutter Web', 'Accessibility', 'Testing', 'Responsive UI', 'CI/CD',],
             ),
           ],
-        );
+        );*/
       },
     );
   }
