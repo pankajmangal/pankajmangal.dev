@@ -41,7 +41,7 @@ class _PortfolioSocialButtonState extends State<PortfolioSocialButton> {
           child: SvgPicture.asset(
             widget.iconPath,
             colorFilter: ColorFilter.mode(
-              isHovered ? Colors.white : Colors.grey,
+              isHovered ? Colors.white : AppColors.greyColor700,
               BlendMode.srcIn,
             ),
             width: 20,

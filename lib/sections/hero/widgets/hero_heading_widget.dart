@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
-import 'package:pankaj_portfolio/core/utils/app_gradients.dart';
+import 'package:pankaj_portfolio/core/utils/dimens.dart';
+
+import '../../../widgets/gradients/gradient_text.dart';
 
 class HeroHeadingWidget extends StatelessWidget {
   const HeroHeadingWidget({super.key});
@@ -15,29 +17,25 @@ class HeroHeadingWidget extends StatelessWidget {
             text: 'I architect ',
             style: GoogleFonts.inter(
               fontSize: 64,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w700,
               color: AppColors.heading,
               height: 1.2,
             ),
           ),
-          TextSpan(
-            text: 'scalable',
-            style: GoogleFonts.inter(
-              fontSize: 64,
-              fontWeight: FontWeight.w800,
-              letterSpacing: -0.3,
-              height: 1.5,
-              foreground: Paint()
-                ..shader = AppGradients.primary.createShader(
-                  const Rect.fromLTWH(0, 0, 500, 200),
-                ),
+          WidgetSpan(
+            child: GradientText(
+              text: 'scalable',
+              fontSize: Dimens.fontSize64,
+              fontWeight: FontWeight.w700,
             ),
+            alignment: PlaceholderAlignment.baseline,
+            baseline: TextBaseline.alphabetic,
           ),
           TextSpan(
             text: '\nmobile experiences.',
             style: GoogleFonts.inter(
               fontSize: 64,
-              fontWeight: FontWeight.w800,
+              fontWeight: FontWeight.w700,
               color: AppColors.heading,
               height: 1.2,
             ),

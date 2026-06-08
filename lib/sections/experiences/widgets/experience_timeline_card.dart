@@ -17,12 +17,10 @@ class ExperienceTimelineCard extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         SizedBox(
           width: 60,
           child: Column(
             children: [
-
               Container(
                 width: 18,
                 height: 18,

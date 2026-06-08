@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/app_constants.dart';
 import 'package:pankaj_portfolio/sections/experiences/widgets/experience_timeline_card.dart';
 
@@ -9,7 +10,7 @@ class ExperienceDesktopWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFF8FAFC),
+      color: AppColors.whiteColor,
       padding: const EdgeInsets.symmetric(
         horizontal: 120,
         vertical: 80,
@@ -17,7 +18,6 @@ class ExperienceDesktopWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           Text(
             'EXPERIENCE',
             style: GoogleFonts.inter(

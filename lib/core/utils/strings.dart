@@ -43,6 +43,11 @@ class Strings {
   static const devName = '<Pankaj.dev />';
   static const downloadCV = 'Download CV';
 
+  //E
+  static const experiences = 'Experiences';
+  static const emailMe = 'Email me';
+
+
   //F
   static const footerDevNote = 'Building scalable cross-platform mobile applications with clean architecture and performance-first design.';
 
@@ -50,7 +55,7 @@ class Strings {
   static const getInTouch = 'Get In Touch';
 
   //H
-  static const experiences = 'Experiences';
+
 
   //G
   static const greetingText = "Hi, I'm Pankaj Mangal";

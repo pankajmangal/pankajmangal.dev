@@ -16,21 +16,25 @@ class DownloadCvButtonWidget extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset(ImagePaths.download,
-            colorFilter: ColorFilter.mode(
-              Colors.black,
-              BlendMode.srcIn,
-            ),
+          SvgPicture.asset(
+            ImagePaths.download,
+            colorFilter: ColorFilter.mode(Colors.black, BlendMode.srcIn),
             width: 18,
             height: 18,
-            fit: BoxFit.scaleDown,),
-          SizedBox(width: Dimens.padding12,),
-          Text(Strings.downloadCV, style: TextStyle(color: AppColors.blackColor,
-              fontSize: Dimens.fontSize14, fontWeight: FontWeight.w500)),
+            fit: BoxFit.scaleDown,
+          ),
+          SizedBox(width: Dimens.padding12),
+          Text(
+            Strings.downloadCV,
+            style: TextStyle(
+              color: AppColors.blackColor,
+              fontSize: Dimens.fontSize14,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
         ],
       ),
-      onPressed: () =>
-          ScrollManager.scrollTo(ScrollManager.contactKey),
+      onPressed: () => ScrollManager.scrollTo(ScrollManager.contactKey),
     );
   }
 }
