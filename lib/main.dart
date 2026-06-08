@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             // ProjectsSection(),
             // PortfolioSection(),
             ContactSection(),
-            // FooterSection(),
+            FooterSection(),
           ],
         ),
       ),

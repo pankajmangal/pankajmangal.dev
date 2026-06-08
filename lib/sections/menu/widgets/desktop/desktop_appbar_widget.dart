@@ -25,7 +25,7 @@ class DesktopAppbarWidget extends StatelessWidget {
             onTap: () => ScrollManager.scrollTo(ScrollManager.skillsKey),
           ),
           NavItem(
-            title: Strings.experiences,
+            title: Strings.experience,
             onTap: () => ScrollManager.scrollTo(ScrollManager.experiencesKey),
           ),
           NavItem(

@@ -11,6 +11,7 @@ import 'package:pankaj_portfolio/sections/menu/widgets/nav_item.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_elevated_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
 import 'package:pankaj_portfolio/widgets/gradients/gradient_text.dart';
+import 'package:pankaj_portfolio/widgets/logo/portfolio_logo.dart';
 
 class DesktopPortfolioHeader extends StatelessWidget {
   const DesktopPortfolioHeader({super.key});
@@ -34,42 +35,7 @@ class DesktopPortfolioHeader extends StatelessWidget {
         children: [
           Expanded(
             flex: 2,
-            child: Row(
-              children: [
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: '<',
-                        style: GoogleFonts.inter(
-                          color: AppColors.heading,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      WidgetSpan(
-                        child: GradientText(
-                          text: 'pankaj',
-                          fontSize: Dimens.fontSize16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: -0.3,
-                        ),
-                        alignment: PlaceholderAlignment.baseline,
-                        baseline: TextBaseline.alphabetic,
-                      ),
-                      TextSpan(
-                        text: '.dev />',
-                        style: GoogleFonts.inter(
-                          color: AppColors.heading,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            child: PortfolioLogo(),
           ),
           Expanded(
             flex: 5,
@@ -81,7 +47,7 @@ class DesktopPortfolioHeader extends StatelessWidget {
                   onTap: () => ScrollManager.scrollTo(ScrollManager.aboutKey),
                 ),
                 NavItem(
-                  title: Strings.experiences,
+                  title: Strings.experience,
                   onTap: () => ScrollManager.scrollTo(ScrollManager.experiencesKey),
                 ),
                 NavItem(

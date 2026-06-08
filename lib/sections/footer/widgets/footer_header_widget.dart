@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
-import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
+import 'package:pankaj_portfolio/widgets/logo/portfolio_logo.dart';
 
 class FooterHeaderWidget extends StatelessWidget {
   const FooterHeaderWidget({super.key, this.headerFontSize});
@@ -16,14 +16,7 @@ class FooterHeaderWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            Strings.devName,
-            style: GoogleFonts.inter(
-              fontSize: headerFontSize ?? Dimens.fontSize28,
-              fontWeight: FontWeight.bold,
-              color: AppColors.primary,
-            ),
-          ),
+          PortfolioLogo(textHeadingColor: AppColors.whiteColor,),
           const SizedBox(height: 16),
           Text(
             Strings.footerDevNote,

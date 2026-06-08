@@ -44,7 +44,7 @@ class Strings {
   static const downloadCV = 'Download CV';
 
   //E
-  static const experiences = 'Experiences';
+  static const experience = 'Experience';
   static const emailMe = 'Email me';
 
 
