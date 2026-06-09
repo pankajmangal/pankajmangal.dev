@@ -33,7 +33,7 @@ class _FetchProjectsWidgetState extends State<FetchProjectsWidget> {
           children: widget.projects.map((project) {
             return SizedBox(
               width: itemWidth,
-              child: ProjectCard(project: project),
+              // child: ProjectCard(project: project),
             );
           }).toList(),
         );

@@ -58,7 +58,7 @@ final experiences = [
       'BLoC',
       'Clean Architecture',
       'GitHub Actions',
-      'Fastlane'
+      'Fastlane',
     ],
   ),
   ExperienceModel(
@@ -80,7 +80,7 @@ final experiences = [
       'GraphQL',
       'Firebase',
       'MoEngage',
-      'CleverTap'
+      'CleverTap',
     ],
   ),
 
@@ -101,7 +101,7 @@ final experiences = [
       'Flutter Web',
       'Accessibility',
       'Testing',
-      'CI/CD'
+      'CI/CD',
     ],
   ),
 
@@ -122,9 +122,9 @@ final experiences = [
       'Android',
       'MVVM',
       'CI/CD',
-      'Kotlin'
-      'REST APIs'
-      'BLoC/Getx State management'
+      'Kotlin',
+      'REST APIs',
+      'BLoC/Getx State management',
     ],
   ),
 
@@ -137,17 +137,17 @@ final experiences = [
       'Built and launched multiple Android applications from concept to Play Store release.',
       'Worked across Delaine Technologies, Ecomaxgo LLP, Ads & Url, and Hartron.',
       'Developed strong foundations in Java, Kotlin, Android SDK, Material Design, and clean coding practices.',
-      'Collaborated directly with clients and stakeholders to deliver business-focused solutions.'
+      'Collaborated directly with clients and stakeholders to deliver business-focused solutions.',
     ],
     skills: [
       'Android',
       'Java',
       'Kotlin',
-      'Jetpack Compose'
+      'Jetpack Compose',
       'Material Design',
       'SQLite',
-      'REST APIs'
-      'Hilt/Koin DI'
+      'REST APIs',
+      'Hilt/Koin DI',
     ],
   ),
 ];

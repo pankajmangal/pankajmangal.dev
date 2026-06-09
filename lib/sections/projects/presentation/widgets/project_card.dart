@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pankaj_portfolio/core/utils/app_colors.dart';
-import 'package:pankaj_portfolio/core/utils/app_constants.dart';
-import 'package:pankaj_portfolio/core/utils/image_paths.dart';
-import 'package:pankaj_portfolio/sections/projects/domain/entity/project_entity.dart';
-import 'package:pankaj_portfolio/widgets/buttons/gradient_button.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProjectCard extends StatefulWidget {
-  final ProjectEntity project;
+  final String title;
+  final String subtitle;
+  final String problem;
+  final String solution;
+  final List<String> metrics;
+  final List<String> tags;
 
-  const ProjectCard({super.key, required this.project});
+  const ProjectCard({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.problem,
+    required this.solution,
+    required this.metrics,
+    required this.tags,
+  });
 
   @override
   State<ProjectCard> createState() => _ProjectCardState();
@@ -39,182 +47,158 @@ class _ProjectCardState extends State<ProjectCard> {
             )
           ],
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // buildPlatformBadges(widget.project.platforms),
-            // const SizedBox(height: 12),
-            ClipRRect(
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(16),
-              ),
-              child: Image.network(
-                widget.project.banner,
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.fill,
-              ),
+        child: Container(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _featuredBadge(),
+          const SizedBox(height: 24),
+          Text(
+            widget.title,
+            style: GoogleFonts.inter(
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+              color: const Color(0xFF111827),
             ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  Text(
-                    widget.project.title,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            widget.subtitle,
+            style: GoogleFonts.inter(
+              fontSize: 14,
+              height: 1.5,
+              color: const Color(0xFF6B7280),
+            ),
+          ),
+          const SizedBox(height: 28),
+          _label('PROBLEM'),
+          const SizedBox(height: 8),
+          Text(
+            widget.problem,
+            style: GoogleFonts.inter(
+              fontSize: 14,
+              height: 1.6,
+              color: const Color(0xFF374151),
+            ),
+          ),
+          const SizedBox(height: 18),
+          _label('SOLUTION'),
+          const SizedBox(height: 8),
+          Text(
+            widget.solution,
+            style: GoogleFonts.inter(
+              fontSize: 14,
+              height: 1.6,
+              color: const Color(0xFF374151),
+            ),
+          ),
+          const SizedBox(height: 18),
+          _label('IMPACT'),
+          const SizedBox(height: 12),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: widget.metrics
+                .map(
+                  (e) => Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 8,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: const Color(0xFFE5E7EB),
                   ),
-
-                  const SizedBox(height: 8),
-
-                  Text(
-                    widget.project.description,
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(color: Colors.grey),
+                ),
+                child: Text(
+                  e,
+                  style: GoogleFonts.inter(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: const Color(0xFF374151),
                   ),
-
-                  const SizedBox(height: 16),
-
-
-                  buildHighlights(widget.project.highlights),
-
-                  const SizedBox(height: 12),
-
-                  buildFeatures(widget.project.features),
-
-                  const SizedBox(height: 12),
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    children: widget.project.technologies
-                        .map(
-                          (e) => Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 6),
-                        decoration: BoxDecoration(
-                          color: Colors.blue.withValues(alpha: .1),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Text(
-                          e,
-                          style: const TextStyle(
-                            color: Colors.blue,
-                            fontSize: 12,
-                          ),
-                        ),
-                      ),
-                    )
-                        .toList(),
-                  ),
-
-                  const SizedBox(height: 16),
-
-                  /// BUTTONS
-                  Row(
-                    children: [
-                      if (widget.project.playStoreUrl.isNotEmpty)
-                        GradientButton(
-                          text: 'Play Store',
-                          icon: ImagePaths.android,
-                          onTap: () => openLink(widget.project.playStoreUrl),
-                        ),
-
-                      const SizedBox(width: 12),
-
-                      if (widget.project.appStoreUrl.isNotEmpty)
-                        GradientButton(
-                          text: 'App Store',
-                          icon: ImagePaths.apple,
-                          onTap: () => openLink(widget.project.appStoreUrl),
-                        ),
-                    ],
-                  )
-                ],
+                ),
               ),
             )
-          ],
-        ),
+                .toList(),
+          ),
+          const SizedBox(height: 16),
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: widget.tags
+                .map(
+                  (e) => Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 6,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: const Color(0xFFE5E7EB),
+                  ),
+                ),
+                child: Text(
+                  e,
+                  style: GoogleFonts.inter(
+                    fontSize: 12,
+                    color: const Color(0xFF6B7280),
+                  ),
+                ),
+              ),
+            )
+                .toList(),
+          ),
+        ],
+      ),
+    )
       ),
     );
   }
 
-  Widget buildPlatformBadges(List<String> platforms) {
-    return Wrap(
-      spacing: 8,
-      children: platforms.map((e) {
-        return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-          decoration: BoxDecoration(
-            color: Colors.black87,
-            borderRadius: BorderRadius.circular(20),
+  Widget _featuredBadge() {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 12,
+        vertical: 7,
+      ),
+      decoration: BoxDecoration(
+        color: const Color(0xFFEEF2FF),
+        borderRadius: BorderRadius.circular(100),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Icon(
+            Icons.auto_awesome,
+            size: 14,
+            color: Color(0xFF4F46E5),
           ),
-          child: Text(
-            e,
-            style: const TextStyle(color: Colors.white, fontSize: 12),
-          ),
-        );
-      }).toList(),
-    );
-  }
-
-  Widget buildHighlights(List<String> highlights) {
-    return Wrap(
-      spacing: 6,
-      runSpacing: 6,
-      children: highlights.map((e) {
-        return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-          decoration: BoxDecoration(
-            color: const Color(0xffEEF2FF),
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Text(
-            e,
-            style: const TextStyle(
+          const SizedBox(width: 6),
+          Text(
+            'Featured',
+            style: GoogleFonts.inter(
               fontSize: 12,
-              color: Color(0xff3B82F6),
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
+              color: const Color(0xFF4F46E5),
             ),
           ),
-        );
-      }).toList(),
+        ],
+      ),
     );
   }
 
-  Widget buildFeatures(List<String> features) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          'Key Features:',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 14,
-          ),
-        ),
-        const SizedBox(height: 6),
-        ...features.map(
-              (e) => Padding(
-            padding: const EdgeInsets.only(bottom: 4),
-            child: Row(
-              children: [
-                SvgPicture.asset(
-                  ImagePaths.playArrow,
-                  colorFilter: ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-                  width: 16, height: 16,
-                ),
-                const SizedBox(width: 4),
-                Expanded(child: Text(e)),
-              ],
-            ),
-          ),
-        )
-      ],
+  Widget _label(String text) {
+    return Text(
+      text,
+      style: GoogleFonts.jetBrainsMono(
+        fontSize: 12,
+        letterSpacing: 4,
+        color: const Color(0xFF6B7280),
+      ),
     );
   }
 }

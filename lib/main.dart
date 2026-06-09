@@ -16,7 +16,6 @@ import 'package:pankaj_portfolio/sections/menu/widgets/mobile/mobile_drawer_widg
 import 'package:pankaj_portfolio/sections/projects/presentation/bloc/projects_bloc.dart';
 import 'package:pankaj_portfolio/sections/projects/presentation/bloc/projects_event.dart';
 import 'package:pankaj_portfolio/sections/projects/presentation/projects_section.dart';
-import 'package:pankaj_portfolio/sections/skills/skills_section.dart';
 import 'core/theme/theme_bloc.dart';
 import 'core/theme/app_theme.dart';
 import 'sections/hero/hero_section.dart';
@@ -103,11 +102,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           children: [
             HeroSection(),
             AboutSection(),
-            // SkillsSection(),
             ExperienceSection(),
-            // HighlightsSection(),
-            // ProjectsSection(),
-            // PortfolioSection(),
+            ProjectsSection(),
             ContactSection(),
             FooterSection(),
           ],
