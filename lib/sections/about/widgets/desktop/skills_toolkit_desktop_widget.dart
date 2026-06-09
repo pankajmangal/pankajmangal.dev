@@ -38,7 +38,7 @@ class SkillsToolkitDesktopWidget extends StatelessWidget {
           const SizedBox(height: Dimens.padding28),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               AboutSkillToolkitWidget(
                 title: 'Mobile',
