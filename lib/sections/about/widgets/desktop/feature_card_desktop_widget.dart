@@ -11,7 +11,6 @@ class FeatureCardDesktopWidget extends StatelessWidget {
       children: [
         Expanded(
           child: FeatureCard(
-            active: true,
             icon: ImagePaths.architecture,
             title: 'Scalable Architecture',
             description:

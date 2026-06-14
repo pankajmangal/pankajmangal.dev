@@ -15,28 +15,26 @@ class AboutSkillToolkitWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: GoogleFonts.inter(
-              fontSize: Dimens.fontSize16,
-              fontWeight: FontWeight.w600,
-              color: const Color(0xFF111827),
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: GoogleFonts.inter(
+            fontSize: Dimens.fontSize16,
+            fontWeight: FontWeight.w600,
+            color: const Color(0xFF111827),
           ),
-          const SizedBox(height: 16),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: skills
-                .map((skill) => AboutSkillChip(text: skill))
-                .toList(),
-          ),
-        ],
-      ),
+        ),
+        const SizedBox(height: 16),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: skills
+              .map((skill) => AboutSkillChip(text: skill))
+              .toList(),
+        ),
+      ],
     );
   }
 }

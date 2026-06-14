@@ -10,7 +10,7 @@ class SkillsToolkitDesktopWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(40),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(28),
@@ -38,42 +38,49 @@ class SkillsToolkitDesktopWidget extends StatelessWidget {
           const SizedBox(height: Dimens.padding28),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              AboutSkillToolkitWidget(
-                title: 'Mobile',
-                skills: [
-                  'Flutter',
-                  'Dart',
-                  'iOS (Swift)',
-                  'Android (Kotlin)',
-                  'Python',
-                ],
+              Expanded(
+                child: AboutSkillToolkitWidget(
+                  title: 'Mobile',
+                  skills: [
+                    'Flutter',
+                    'Dart',
+                    'iOS (Swift)',
+                    'Android (Kotlin)',
+                    'Python',
+                  ],
+                ),
               ),
-              AboutSkillToolkitWidget(
-                title: 'Architecture',
-                skills: [
-                  'Clean Architecture',
-                  'MVVM',
-                  'BLoC',
-                  'Riverpod',
-                  'Modular Monorepos',
-                ],
+              Expanded(
+                child: AboutSkillToolkitWidget(
+                  title: 'Architecture',
+                  skills: [
+                    'Clean Architecture',
+                    'MVVM',
+                    'BLoC',
+                    'Riverpod',
+                    'Modular Monorepos',
+                  ],
+                ),
               ),
-              AboutSkillToolkitWidget(
-                title: 'Backend & APIs',
-                skills: ['Firebase', 'GraphQL', 'REST', 'Node.js', 'Django'],
+              Expanded(
+                child: AboutSkillToolkitWidget(
+                  title: 'Backend & APIs',
+                  skills: ['Firebase', 'GraphQL', 'REST', 'Node.js', 'Django'],
+                ),
               ),
-              AboutSkillToolkitWidget(
-                title: 'DevOps & Quality',
-                skills: [
-                  'GitHub Actions',
-                  'GitLab CI',
-                  'Fastlane',
-                  'Code magic',
-                  'CI/CD',
-                  'SonarQube',
-                ],
+              Expanded(
+                child: AboutSkillToolkitWidget(
+                  title: 'DevOps & Quality',
+                  skills: [
+                    'GitHub Actions',
+                    'GitLab CI',
+                    'Fastlane',
+                    'Code magic',
+                    'CI/CD',
+                    'SonarQube',
+                  ],
+                ),
               ),
             ],
           ),

@@ -7,14 +7,12 @@ class FeatureCard extends StatefulWidget {
   final String icon;
   final String title;
   final String description;
-  final bool active;
 
   const FeatureCard({
     super.key,
     required this.icon,
     required this.title,
     required this.description,
-    this.active = false,
   });
 
   @override
