@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/image_paths.dart';
 import 'package:pankaj_portfolio/sections/experiences/models/experience_model.dart';
@@ -8,12 +10,13 @@ import 'package:pankaj_portfolio/sections/experiences/models/experience_model.da
 class ExperienceCard extends StatelessWidget {
   final ExperienceModel experience;
 
-  const ExperienceCard({required this.experience});
+  const ExperienceCard({super.key, required this.experience});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.all(24),
+      margin: const EdgeInsets.only(bottom: 24),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -45,7 +48,48 @@ class ExperienceCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
-          Row(
+          context.isMobile ? Column(
+            children: [
+              Row(
+                children: [
+                  SvgPicture.asset(
+                  ImagePaths.work,
+                  width: 18,
+                  height: 18,
+                  colorFilter: const ColorFilter.mode(
+                    Color(0xFF64748B),
+                    BlendMode.srcIn,
+                  ),
+                ),
+                  const SizedBox(width: 8),
+                  Text(
+                    experience.duration,
+                    style: GoogleFonts.jetBrainsMono(
+                      fontSize: 12,
+                      color: const Color(0xFF64748B),
+                    ),
+                  ),],
+              ),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.location_on_outlined,
+                    size: 18,
+                    color: Color(0xFF64748B),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    experience.location,
+                    style: GoogleFonts.jetBrainsMono(
+                      fontSize: 12,
+                      color: const Color(0xFF64748B),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ) : Row(
             children: [
               SvgPicture.asset(
                 ImagePaths.work,
@@ -92,7 +136,7 @@ class ExperienceCard extends StatelessWidget {
                     width: 4,
                     height: 4,
                     decoration: const BoxDecoration(
-                      color: Color(0xFF4F46E5),
+                      color: AppColors.primary,
                       shape: BoxShape.circle,
                     ),
                   ),

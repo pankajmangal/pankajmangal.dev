@@ -49,7 +49,7 @@ class SkillsToolkitMobileWidget extends StatelessWidget {
                   'Python',
                 ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 24),
               AboutSkillToolkitWidget(
                 title: 'Architecture',
                 skills: [
@@ -60,12 +60,12 @@ class SkillsToolkitMobileWidget extends StatelessWidget {
                   'Modular Monorepos',
                 ],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 24),
               AboutSkillToolkitWidget(
                 title: 'Backend & APIs',
                 skills: ['Firebase', 'GraphQL', 'REST', 'Node.js', 'Django'],
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 24),
               AboutSkillToolkitWidget(
                 title: 'DevOps & Quality',
                 skills: [

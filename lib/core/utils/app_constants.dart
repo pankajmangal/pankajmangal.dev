@@ -6,6 +6,7 @@ import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/about/model/card_model.dart';
 import 'package:pankaj_portfolio/sections/experiences/models/experience_model.dart';
 import 'package:pankaj_portfolio/sections/hero/models/stat_item.dart';
+import 'package:pankaj_portfolio/sections/projects/presentation/widgets/project_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 final items = [
@@ -191,3 +192,171 @@ dynamic openLinkByLauncher(String url) async {
     launchUrl(uri);
   }
 }
+
+final desktopPaddingSymmetry = const EdgeInsets.symmetric(
+horizontal: 100,
+vertical: 80,
+);
+
+final tabletPaddingSymmetry = const EdgeInsets.symmetric(
+  horizontal: 80,
+  vertical: 80,
+);
+
+final mobilePaddingSymmetry = const EdgeInsets.symmetric(
+  horizontal: 40,
+  vertical: 60,
+);
+
+final List<ProjectCard> projects = [
+  ProjectCard(
+    category: 'FinTech',
+    title: 'Maya (PayMaya)',
+    description:
+    'One of the largest digital wallet and financial services platforms in the Philippines, enabling payments, banking, transfers, savings, and QR transactions.',
+    highlights: [
+      'Digital wallet ecosystem',
+      'QR payments',
+      'Bill payments',
+      'Virtual & physical cards',
+      'Secure banking services',
+      'Large-scale production deployment',
+    ],
+    impacts: [
+      '50M+ transactions',
+      'Secure Payments',
+      'FinTech',
+      'Wallet Platform',
+    ],
+    tech: [
+      'Flutter',
+      'Dart',
+      'Bloc',
+      'Firebase',
+      'REST APIs',
+      'Clean Architecture',
+      'CI/CD',
+    ],
+  ),
+  ProjectCard(
+    category: 'E-Commerce',
+    title: 'Amala Earth',
+    description:
+    'Sustainable shopping marketplace featuring 60,000+ eco-friendly products from hundreds of conscious brands.',
+    highlights: [
+      'Product catalog',
+      'Secure checkout',
+      'Wishlist',
+      'Search & filtering',
+      'Order tracking',
+      'Payment integrations',
+    ],
+    impacts: ['60,000+ Products', '400+ Brands', 'Sustainable Commerce'],
+    tech: [
+      'Flutter',
+      'Dart',
+      'Firebase',
+      'REST APIs',
+      'GraphQL',
+      'Razorpay',
+      'Clean Architecture',
+      'Analytics',
+    ],
+  ),
+  ProjectCard(
+    category: 'Marketplace',
+    title: 'Bilddit',
+    description:
+    'Construction and building-material marketplace helping contractors and homeowners order supplies quickly.',
+    highlights: [
+      'Product catalog',
+      'Fast ordering',
+      'Real-time inventory',
+      'Order tracking',
+      'Secure payments',
+      'Trade-focused workflows',
+    ],
+    impacts: ['Marketplace', 'Delivery Platform', 'B2B Commerce'],
+    tech: [
+      'Flutter',
+      'Dart',
+      'Bloc/Cubit',
+      'Social Login Integration',
+      'REST APIs',
+      'GraphQL',
+      'Stripe',
+      'Clean Architecture',
+      'Analytics',
+    ],
+  ),
+  ProjectCard(
+    category: 'Transportation',
+    title: 'TaxiApp UK Passenger',
+    description:
+    'London black-cab booking platform allowing users to instantly book or schedule rides with licensed drivers.',
+    highlights: [
+      'Live ride tracking',
+      'Google Maps',
+      'Stripe payments',
+      'Push notifications',
+      'Scheduled bookings',
+      'WebSocket communication',
+    ],
+    impacts: ['Real-Time Tracking', 'Ride Booking', 'Easier Payment Methods'],
+    tech: [
+      'Flutter',
+      'Firebase',
+      'REST APIs',
+      'Google Maps',
+      'Clean Architecture',
+      'WebSocket',
+      'Stripe',
+    ],
+  ),
+  ProjectCard(
+    category: 'Transportation',
+    title: 'TaxiApp UK Driver',
+    description:
+    'Driver companion application providing ride management, navigation, earnings tracking, and dispatch functionality.',
+    highlights: [
+      'Driver earnings',
+      'Ride dispatch',
+      'Live navigation',
+      'Location tracking',
+      'Push notifications',
+    ],
+    impacts: ['Driver Platform', 'Real-Time Location', 'Fleet Management'],
+    tech: [
+      'Flutter',
+      'Firebase',
+      'REST APIs',
+      'Google Maps',
+      'Clean Architecture',
+      'WebSocket',
+      'Stripe',
+    ],
+  ),
+  ProjectCard(
+    category: 'Child Transportation',
+    title: 'Kidcaboo & Driving Nanny',
+    description:
+    'Transportation ecosystem designed specifically for children with real-time guardian monitoring and driver management.',
+    highlights: [
+      'Live child tracking',
+      'Driver assignment',
+      'Route monitoring',
+      'Ride safety workflows',
+      'Push notifications',
+    ],
+    impacts: ['Child Safety', 'Location Tracking', 'Fleet Operations'],
+    tech: [
+      'Flutter',
+      'Firebase',
+      'REST APIs',
+      'Google Maps',
+      'Clean Architecture',
+      'WebSocket',
+      'Razorpay',
+    ],
+  ),
+];

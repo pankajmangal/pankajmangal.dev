@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pankaj_portfolio/core/extensions/responsive_extensions.dart';
 import 'package:pankaj_portfolio/sections/experiences/experience_card.dart';
 import 'package:pankaj_portfolio/sections/experiences/models/experience_model.dart';
 
@@ -45,7 +46,7 @@ class ExperienceTimelineCard extends StatelessWidget {
               if (!isLast)
                 Container(
                   width: 1,
-                  height: 400,
+                  height: context.isMobile ? 620 : 440,
                   color: const Color(0xFFE2E8F0),
                 ),
             ],

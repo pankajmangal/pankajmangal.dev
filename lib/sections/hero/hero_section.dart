@@ -48,7 +48,7 @@ class HeroSection extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.symmetric(
-              horizontal: 80,
+              horizontal: 40,
               vertical: 80,
             ),
             child: LayoutBuilder(

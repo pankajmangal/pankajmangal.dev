@@ -21,16 +21,14 @@ import 'core/theme/app_theme.dart';
 import 'sections/hero/hero_section.dart';
 import 'core/di/portfolio_di.dart' as di;
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   //Initialized di....
   di.init();
 
   //Initialized firebase...
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -44,7 +42,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => NavBloc()),
         BlocProvider(create: (_) => ThemeBloc()),
         BlocProvider(create: (_) => di.sl<ContactBloc>()),
-        BlocProvider(create: (_) => di.sl<ProjectsBloc>()..add(FetchProjectsEvent())),
+        BlocProvider(
+          create: (_) => di.sl<ProjectsBloc>()..add(FetchProjectsEvent()),
+        ),
       ],
       child: BlocBuilder<ThemeBloc, ThemeState>(
         builder: (context, state) {
@@ -69,7 +69,8 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
@@ -85,15 +86,13 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
-      appBar: PortfolioAppBar(controller: _controller,),
+      appBar: PortfolioAppBar(controller: _controller),
       endDrawer: Drawer(
         width: MediaQuery.of(context).size.width * .78,
-    backgroundColor: Colors.transparent,
-    elevation: 0,
-    child: MobileDrawerWidget(
-    controller: _controller,
-    ),
-    ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        child: MobileDrawerWidget(controller: _controller),
+      ),
       body: SingleChildScrollView(
         controller: ScrollManager.controller,
         child: Column(

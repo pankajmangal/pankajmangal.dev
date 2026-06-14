@@ -20,10 +20,6 @@ class FooterQuickLinksWidget extends StatelessWidget {
           onTap: () => ScrollManager.scrollTo(ScrollManager.aboutKey),
         ),
         FooterItem(
-          label: 'Skills',
-          onTap: () => ScrollManager.scrollTo(ScrollManager.skillsKey),
-        ),
-        FooterItem(
           label: 'Experiences',
           onTap: () => ScrollManager.scrollTo(ScrollManager.experiencesKey),
         ),

@@ -3,6 +3,7 @@ class Strings {
   //A
   static const about = 'About';
   static const aboutMe = 'About Me';
+  static const aboutTitle = 'Building scalable mobile platforms, leading engineering teams, and delivering measurable outcomes.';
   static const aboutHeading = '"Senior Flutter Engineer | 500K+ Users | Clean Architecture | Performance Driven"';
   static const aboutText1 = 'I\'m a Senior Flutter Engineer with 8+ years of experience in mobile development, including 5+ years specializing in Flutter. I build scalable, high-performance applications across Android, iOS, and Web using clean architecture and modern engineering practices.';
   static const aboutText2 = 'I specialize in designing modular, maintainable systems using BLoC, Riverpod, and MVVM, with strong expertise in REST/GraphQL integrations, performance optimization, and building responsive, production-ready user interfaces.';
@@ -28,6 +29,15 @@ class Strings {
   static const animatedText2 = 'High-Performance Flutter Apps';
   static const animatedText3 = 'Cross-Platform Product Engineering';
   static const animatedText4 = 'Clean Architecture & Modular Systems';
+  static const aboutDesc = 'I help companies build scalable mobile products across Android,'
+      " iOS and Web. \n\nOver the last 9+ years, I've architected "
+      'cross-platform applications, led engineering teams, and delivered products'
+      ' used by hundreds of thousands of users. My focus is on clean architecture, '
+      'performance optimization, CI/CD automation, and creating maintainable '
+      'systems that help teams move faster. '
+      "\n\nBeyond mobile development, I'm actively expanding"
+      ' into Python backend development and AI-powered applications,'
+      ' combining modern engineering practices with emerging technologies.';
 
   //B
   static const buildWith = 'Built with Flutter Passion ❤️';
@@ -38,6 +48,12 @@ class Strings {
   static const connectWithMe = 'Connect With Me';
   static const copyrightText = '© 2026 Pankaj Mangal. All rights reserved.️';
   static const contactSectionDesc = 'Open to Flutter architecture roles, consulting, and scalable mobile product development.';
+  static const contactHeader = 'Get In Touch';
+  static const contactTitle = 'Let\'s build something great.';
+  static const contactDesc = 'I\'m open to Senior Flutter, Lead Engineer, and Mobile Architecture roles. Let\'s discuss how I can help your team build scalable, high-quality mobile products.';
+  static const contactLookingFor = 'Looking for a ';
+  static const contactFlutterLead = 'Flutter Lead';
+  static const contactWhoDelivers = ' who delivers?';
 
   //D
   static const devName = '<Pankaj.dev />';
@@ -46,13 +62,16 @@ class Strings {
   //E
   static const experience = 'Experience';
   static const emailMe = 'Email me';
+  static const experienceTitle = '9+ years building mobile products at scale.';
+  static const experienceDesc = 'From Android development to Flutter leadership — designing architecture, mentoring engineers, and delivering products used by hundreds of thousands of users.';
 
 
   //F
+  static const flutterLeadEngineer = 'Flutter Lead Engineer';
   static const footerDevNote = 'Building scalable cross-platform mobile applications with clean architecture and performance-first design.';
 
   //G
-  static const getInTouch = 'Get In Touch';
+
 
   //H
 
@@ -80,6 +99,9 @@ class Strings {
   static const projects = 'Projects';
   static const professionalExperiences = 'Experiences';
   static const professionalExperienceDesc = '9+ Years Experience  |  500K+ Users  |  30% Crash Reduction  |  40% Faster Releases';
+  static const projectHeader = 'Selected Work';
+  static const projectTitle = 'Building Products That Scale.';
+  static const projectDesc = 'Production applications across fintech, mobility, e-commerce, and consumer platforms — designed for performance, reliability, and real-world impact.';
 
   //S
   static const skills = 'Skills';
@@ -87,7 +109,6 @@ class Strings {
   static const scrollToExplore = 'Scroll to explore';
   static const skillAndExpertise = 'Skills & Expertise';
   static const skillDescription = 'Comprehensive toolkit for building scalable Flutter applications';
-  static const flutterLeadEngineer = 'Flutter Lead Engineer';
 
   //V
   static const viewProjects = 'View Projects';

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
+import 'package:pankaj_portfolio/core/utils/app_constants.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
+import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
+import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/contact/presentation/widgets/contact_social_icons.dart';
 import 'package:pankaj_portfolio/sections/contact/presentation/widgets/email_me_button_widget.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/download_cv_button_widget.dart';
+import 'package:pankaj_portfolio/widgets/texts/section_description.dart';
+import 'package:pankaj_portfolio/widgets/texts/section_header.dart';
+import 'package:pankaj_portfolio/widgets/texts/section_title.dart';
 
 import '../../../../../widgets/gradients/gradient_text.dart';
 
@@ -14,31 +20,17 @@ class ContactDesktopLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: ScrollManager.contactKey,
       color: AppColors.whiteColor,
-      padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 80),
+      padding: desktopPaddingSymmetry,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'GET IN TOUCH',
-            style: GoogleFonts.inter(
-              fontSize: 12,
-              letterSpacing: 2,
-              height: 1.65,
-              fontWeight: FontWeight.w500,
-              color: const Color(0xff4F46E5),
-            ),
-          ),
-          const SizedBox(height: 16),
-          Text(
-            "Let's build something great.",
-            style: GoogleFonts.inter(
-              fontSize: 32,
-              height: 1.05,
-              fontWeight: FontWeight.w700,
-              color: const Color(0xff0F172A),
-            ),
-          ),
+          SectionHeader(title: Strings.contactHeader.toUpperCase(),
+            fontSize: Dimens.fontSize14, fontWeight: FontWeight.w500,),
+          const SizedBox(height: 14),
+          SectionTitle(title: Strings.contactTitle,
+            fontSize: Dimens.fontSize32, fontWeight: FontWeight.w700,),
           const SizedBox(height: 44),
           Container(
             width: double.infinity,
@@ -70,31 +62,26 @@ class ContactDesktopLayout extends StatelessWidget {
                       color: const Color(0xFF111827),
                     ),
                     children: [
-                      const TextSpan(text: 'Looking for a '),
+                      const TextSpan(text: Strings.contactLookingFor),
                       WidgetSpan(
                         child: GradientText(
-                          text: 'Flutter Lead',
+                          text: Strings.contactFlutterLead,
                           fontSize: Dimens.fontSize30,
                           fontWeight: FontWeight.w600,
+                          letterSpacing: -0.8,
                         ),
                         alignment: PlaceholderAlignment.middle,
                       ),
-                      const TextSpan(text: ' who delivers?'),
+                      const TextSpan(text: Strings.contactWhoDelivers),
                     ],
                   ),
                 ),
                 const SizedBox(height: 12),
                 SizedBox(
                   width: 700,
-                  child: Text(
-                    "I'm open to Senior Flutter, Lead Engineer, and Mobile Architecture roles. Let's discuss how I can help your team build scalable, high-quality mobile products.",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.inter(
-                      fontSize: 16,
-                      height: 1.7,
-                      color: const Color(0xFF6B7280),
-                    ),
-                  ),
+                  child: SectionDescription(title: Strings.contactDesc,
+                    fontSize: Dimens.fontSize16, fontWeight: FontWeight.w400,
+                  textAlign: TextAlign.center,),
                 ),
                 const SizedBox(height: 28),
                 Wrap(

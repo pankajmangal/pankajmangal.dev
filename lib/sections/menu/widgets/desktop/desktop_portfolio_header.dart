@@ -74,7 +74,7 @@ class DesktopPortfolioHeader extends StatelessWidget {
                   child: Text(Strings.hireMe, style: TextStyle(color: AppColors.whiteColor,
                       fontSize: Dimens.fontSize14)),
                   onPressed: () =>
-                      ScrollManager.scrollTo(ScrollManager.projectsKey),
+                      ScrollManager.scrollTo(ScrollManager.contactKey),
                 ),
               ],
             ),
