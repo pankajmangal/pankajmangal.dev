@@ -3,7 +3,7 @@ name: Deploy Flutter Web to GitHub Pages
 on:
   push:
     branches:
-      - main   # change if your branch is different
+      - redesign-UI-01June2026   # change if your branch is different
 
 permissions:
   contents: write
