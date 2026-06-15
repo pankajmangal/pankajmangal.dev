@@ -5,6 +5,9 @@ import 'package:pankaj_portfolio/sections/contact/data/repository_impl/contact_r
 import 'package:pankaj_portfolio/sections/contact/domain/repository/contact_repository.dart';
 import 'package:pankaj_portfolio/sections/contact/domain/usecase/submit_contact_usecase.dart';
 import 'package:pankaj_portfolio/sections/contact/presentation/bloc/contact_bloc.dart';
+import 'package:pankaj_portfolio/sections/hero/data/repository_impl/cv_repository_impl.dart';
+import 'package:pankaj_portfolio/sections/hero/domain/repository/cv_repository.dart';
+import 'package:pankaj_portfolio/sections/hero/domain/usecase/download_cv_usecase.dart';
 import 'package:pankaj_portfolio/sections/projects/data/datasource/project_firestore_datasource.dart';
 import 'package:pankaj_portfolio/sections/projects/data/repository/project_repository_impl.dart';
 import 'package:pankaj_portfolio/sections/projects/domain/repository/project_repository.dart';
@@ -34,11 +37,19 @@ Future<void> init() async {
   sl.registerLazySingleton<ProjectRepository>(
         () => ProjectRepositoryImpl(sl()),
   );
+  sl.registerLazySingleton<CvRepository>(
+        () => CvRepositoryImpl(),
+  );
 
   //UseCase....
   sl.registerLazySingleton<SubmitContactUseCase>(() => SubmitContactUseCase(sl()));
   sl.registerLazySingleton<PushProjectsUseCase>(() => PushProjectsUseCase(sl()));
   sl.registerLazySingleton<FetchProjectsUseCase>(() => FetchProjectsUseCase(sl()));
+  sl.registerLazySingleton(
+        () => DownloadCVUseCase(
+      sl<CvRepository>(),
+    ),
+  );
 
   //Bloc....
   sl.registerFactory<ContactBloc>(() => ContactBloc(sl()));
