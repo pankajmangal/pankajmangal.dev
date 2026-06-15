@@ -1,135 +1,88 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:pankaj_portfolio/core/utils/app_colors.dart';
+import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
+import 'package:pankaj_portfolio/sections/hero/widgets/hero_social_icons.dart';
 
-class MobileDrawerWidget extends StatefulWidget {
-  const MobileDrawerWidget({super.key, required this.controller});
+class MobileDrawerWidget extends StatelessWidget {
+  final VoidCallback onMenuTap;
 
-  final AnimationController controller;
-
-  @override
-  State<MobileDrawerWidget> createState() => _MobileDrawerWidgetState();
-}
-
-class _MobileDrawerWidgetState extends State<MobileDrawerWidget> {
+  const MobileDrawerWidget({
+    super.key,
+    required this.onMenuTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.white.withOpacity(.90),
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(32),
-            bottomLeft: Radius.circular(32),
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border(
+          top: BorderSide(
+            color: Color(0xffE5E7EB),
           ),
         ),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(
-            sigmaX: 20,
-            sigmaY: 20,
-          ),
-          child: SafeArea(
-            child: Column(
-              children: [
-                _header(),
-                const Divider(height: 1),
-
-                Expanded(
-                  child: _menuItems(),
-                ),
-
-                _bottomSection(),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _header() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 24,
-        vertical: 20,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Text(
-            '',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-
-          InkWell(
-            onTap: closeMenu,
-            child: const Icon(
-              Icons.close,
-              size: 32,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _menuItems() {
-    return Padding(
-      padding: const EdgeInsets.only(
-        left: 28,
-        top: 32,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          drawerItem(
-            title: "About",
-            onTap: () {},
+          _menuItem(
+            title: Strings.about,
+            onTap: () => _callToSection(ScrollManager.aboutKey),
           ),
-
-          const SizedBox(height: 30),
-
-          drawerItem(
-            title: "Experience",
-            onTap: () {},
+          _menuItem(
+            title: Strings.experience,
+            onTap: () => _callToSection(ScrollManager.experiencesKey),
           ),
-
-          const SizedBox(height: 30),
-
-          drawerItem(
-            title: "Projects",
-            active: true,
-            onTap: () {},
+          _menuItem(
+            title: Strings.projects,
+            onTap: () => _callToSection(ScrollManager.projectsKey),
           ),
-
-          const SizedBox(height: 30),
-
-          drawerItem(
-            title: "Testimonials",
-            onTap: () {},
+          // _menuItem(
+          //   title: 'Testimonials',
+          //   onTap: () => _callToSection(ScrollManager.contactKey),
+          // ),
+          _menuItem(
+            title: Strings.contact,
+              onTap: () => _callToSection(ScrollManager.contactKey)
           ),
-
-          const SizedBox(height: 30),
-
-          drawerItem(
-            title: "Contact",
-            onTap: () {},
+          const SizedBox(height: 40),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              HeroSocialIcons(),
+              SizedBox(
+                height: 54,
+                child: ElevatedButton(
+                  onPressed: () => _callToSection(ScrollManager.contactKey),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                    const Color(0xff4F46E5),
+                    shape: RoundedRectangleBorder(
+                      borderRadius:
+                      BorderRadius.circular(16),
+                    ),
+                  ),
+                  child: Text(
+                    Strings.hireMe,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
 
-  Widget drawerItem({
+  Widget _menuItem({
     required String title,
     bool active = false,
     required VoidCallback onTap,
@@ -138,8 +91,8 @@ class _MobileDrawerWidgetState extends State<MobileDrawerWidget> {
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 12,
+          horizontal: 8,
+          vertical: 16,
         ),
         decoration: active
             ? BoxDecoration(
@@ -150,11 +103,11 @@ class _MobileDrawerWidgetState extends State<MobileDrawerWidget> {
         child: Text(
           title,
           style: TextStyle(
-            fontSize: 18,
+            fontSize: Dimens.fontSize18,
             fontWeight:
             active ? FontWeight.w600 : FontWeight.w400,
             color: active
-                ? const Color(0xff4F46E5)
+                ? AppColors.primary
                 : const Color(0xff6B7280),
           ),
         ),
@@ -162,64 +115,8 @@ class _MobileDrawerWidgetState extends State<MobileDrawerWidget> {
     );
   }
 
-  Widget _bottomSection() {
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Row(
-        children: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'assets/icons/github.svg',
-              width: 22,
-            ),
-          ),
-
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'assets/icons/linkedin.svg',
-              width: 22,
-            ),
-          ),
-
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.mail_outline),
-          ),
-
-          const Spacer(),
-
-          SizedBox(
-            height: 54,
-            child: ElevatedButton(
-              onPressed: () =>
-                  ScrollManager.scrollTo(ScrollManager.contactKey),
-              style: ElevatedButton.styleFrom(
-                backgroundColor:
-                const Color(0xff4F46E5),
-                shape: RoundedRectangleBorder(
-                  borderRadius:
-                  BorderRadius.circular(16),
-                ),
-              ),
-              child: Text(
-                Strings.hireMe,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void closeMenu() async {
-    await widget.controller.reverse();
-    if (!mounted) return;
-    Navigator.of(context).pop();
+  void _callToSection(GlobalKey key){
+    onMenuTap();
+    ScrollManager.scrollTo(key);
   }
 }

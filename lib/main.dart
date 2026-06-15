@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -71,47 +73,54 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
+  bool isMenuOpen = false;
 
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 600),
-    );
+  void toggleMenu() {
+    setState(() {
+      isMenuOpen = !isMenuOpen;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
-      appBar: PortfolioAppBar(controller: _controller),
-      endDrawer: Drawer(
-        width: MediaQuery.of(context).size.width * .78,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        child: MobileDrawerWidget(controller: _controller),
-      ),
-      body: SingleChildScrollView(
-        controller: ScrollManager.controller,
-        child: Column(
-          children: [
-            HeroSection(),
-            AboutSection(),
-            ExperienceSection(),
-            ProjectsSection(),
-            ContactSection(),
-            FooterSection(),
-          ],
-        ),
+      appBar: PortfolioAppBar(isMenuOpen: isMenuOpen, onMenuTap: toggleMenu),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            controller: ScrollManager.controller,
+            child: Column(
+              children: [
+                HeroSection(),
+                AboutSection(),
+                ExperienceSection(),
+                ProjectsSection(),
+                ContactSection(),
+                FooterSection(),
+              ],
+            ),
+          ),
+          if (isMenuOpen)
+            Positioned.fill(
+              child: GestureDetector(
+                onTap: toggleMenu,
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+                  child: Container(color: Colors.black.withAlpha(4)),
+                ),
+              ),
+            ),
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+            top: isMenuOpen ? 0 : -700,
+            left: 0,
+            right: 0,
+            child: MobileDrawerWidget(onMenuTap: toggleMenu),
+          ),
+        ],
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 }
