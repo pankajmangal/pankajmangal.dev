@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
+import 'package:pankaj_portfolio/core/utils/app_constants.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/image_paths.dart';
-import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
+import 'package:pankaj_portfolio/core/utils/social_links.dart';
 import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_elevated_button.dart';
 
@@ -38,8 +39,7 @@ class EmailMeButtonWidget extends StatelessWidget {
             fit: BoxFit.scaleDown,)
         ],
       ),
-      onPressed: () =>
-          ScrollManager.scrollTo(ScrollManager.projectsKey),
+      onPressed: () => openLink(SocialLinks.emailLink),
     );
   }
 }

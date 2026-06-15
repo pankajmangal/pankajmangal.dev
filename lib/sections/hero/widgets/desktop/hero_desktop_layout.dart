@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/download_cv_button_widget.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/hero_description_widget.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/hero_heading_widget.dart';
@@ -14,6 +15,7 @@ class HeroDesktopLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      key: ScrollManager.heroKey,
       children: [
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
