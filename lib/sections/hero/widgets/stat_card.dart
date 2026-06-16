@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
+import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/sections/hero/models/stat_item.dart';
+import 'package:pankaj_portfolio/widgets/gradients/gradient_text.dart';
 
 class StatCard extends StatelessWidget {
   final StatItem stat;
@@ -36,14 +38,12 @@ class StatCard extends StatelessWidget {
         mainAxisAlignment:
         MainAxisAlignment.center,
         children: [
-          Text(
-            stat.value,
-            style: GoogleFonts.inter(
-              fontSize: 28,
-              fontWeight: FontWeight.w600,
-              color: AppColors.primary,
-              height: 1.2,
-            ),
+          GradientText(
+            text: stat.value,
+            fontSize: Dimens.fontSize28,
+            fontWeight: FontWeight.w600,
+            letterSpacing: -0.3,
+            textHeight: 1.2,
           ),
           const SizedBox(height: 10),
           Text(
