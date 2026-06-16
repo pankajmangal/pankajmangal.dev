@@ -51,6 +51,8 @@ class Dimens {
   static const fontSize44 = 44.0;
   static const fontSize46 = 46.0;
   static const fontSize48 = 48.0;
+  static const fontSize52 = 52.0;
+  static const fontSize54 = 54.0;
   static const fontSize56 = 56.0;
   static const fontSize64 = 64.0;
   static const fontSize72 = 72.0;

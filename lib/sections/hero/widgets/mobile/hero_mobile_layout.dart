@@ -18,9 +18,9 @@ class HeroMobileLayout extends StatelessWidget {
       key: ScrollManager.heroKey,
       children: [
         HeroImageWidget(),
-        const SizedBox(height: 40),
+        const SizedBox(height: 48),
         const OpenToWorkBadge(),
-        const SizedBox(height: 24),
+        const SizedBox(height: 32),
         HeroHeadingWidget(),
         const SizedBox(height: 20),
         HeroDescriptionWidget(),

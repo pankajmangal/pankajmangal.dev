@@ -24,8 +24,8 @@ class HeroImageWidget extends StatelessWidget {
           imageWidth = 620;
           imageHeight = 700;
 
-          cardWidth = 260;
-          cardLeft = -30;
+          cardWidth = 140;
+          cardLeft = -40;
           cardBottom = -30;
 
           cardPadding = 24;
@@ -34,8 +34,8 @@ class HeroImageWidget extends StatelessWidget {
           imageWidth = 560;
           imageHeight = 640;
 
-          cardWidth = 250;
-          cardLeft = -30;
+          cardWidth = 140;
+          cardLeft = -40;
           cardBottom = -30;
 
           cardPadding = 24;
@@ -44,8 +44,8 @@ class HeroImageWidget extends StatelessWidget {
           imageWidth = screenWidth * .42;
           imageHeight = imageWidth * 1.15;
 
-          cardWidth = 240;
-          cardLeft = -15;
+          cardWidth = 140;
+          cardLeft = -25;
           cardBottom = -20;
 
           cardPadding = 22;
@@ -54,8 +54,8 @@ class HeroImageWidget extends StatelessWidget {
           imageWidth = screenWidth * .60;
           imageHeight = imageWidth * 1.20;
 
-          cardWidth = 220;
-          cardLeft = -15;
+          cardWidth = 120;
+          cardLeft = -25;
           cardBottom = -20;
 
           cardPadding = 20;
@@ -64,9 +64,9 @@ class HeroImageWidget extends StatelessWidget {
           imageWidth = screenWidth * .85;
           imageHeight = imageWidth * 1.30;
 
-          cardWidth = imageWidth * .72;
-          cardLeft = 16;
-          cardBottom = -15;
+          cardWidth = imageWidth * .64;
+          cardLeft = -30;
+          cardBottom = -20;
 
           cardPadding = 18;
           imageRadius = 24;

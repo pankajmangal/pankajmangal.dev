@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pankaj_portfolio/core/utils/app_colors.dart';
 import 'package:pankaj_portfolio/core/utils/app_constants.dart';
 import 'package:pankaj_portfolio/core/utils/dimens.dart';
@@ -10,7 +9,6 @@ import 'package:pankaj_portfolio/core/utils/strings.dart';
 import 'package:pankaj_portfolio/sections/menu/widgets/nav_item.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_elevated_button.dart';
 import 'package:pankaj_portfolio/widgets/buttons/portfolio_social_button.dart';
-import 'package:pankaj_portfolio/widgets/gradients/gradient_text.dart';
 import 'package:pankaj_portfolio/widgets/logo/portfolio_logo.dart';
 
 class DesktopPortfolioHeader extends StatelessWidget {
@@ -21,7 +19,7 @@ class DesktopPortfolioHeader extends StatelessWidget {
     return Container(
       height: 90,
       padding: const EdgeInsets.symmetric(
-        horizontal: 80,
+        horizontal: 40,
       ),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: .85),
@@ -33,12 +31,11 @@ class DesktopPortfolioHeader extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Expanded(
-            flex: 2,
-            child: PortfolioLogo(),
+          PortfolioLogo(
+            fontSize: Dimens.fontSize18,
+            fontWeight: FontWeight.w500,
           ),
           Expanded(
-            flex: 5,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -61,23 +58,20 @@ class DesktopPortfolioHeader extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(
-            flex: 2,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                PortfolioSocialButton(iconPath: ImagePaths.github, onTap: () => openLink(SocialLinks.githubLink)),
-                const SizedBox(width: 6),
-                PortfolioSocialButton(iconPath: ImagePaths.linkedin, onTap: () => openLink(SocialLinks.linkedinLink)),
-                const SizedBox(width: 12),
-                PortfolioElevatedButton(
-                  child: Text(Strings.hireMe, style: TextStyle(color: AppColors.whiteColor,
-                      fontSize: Dimens.fontSize14)),
-                  onPressed: () =>
-                      ScrollManager.scrollTo(ScrollManager.contactKey),
-                ),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              PortfolioSocialButton(iconPath: ImagePaths.github, onTap: () => openLink(SocialLinks.githubLink)),
+              const SizedBox(width: 6),
+              PortfolioSocialButton(iconPath: ImagePaths.linkedin, onTap: () => openLink(SocialLinks.linkedinLink)),
+              const SizedBox(width: 12),
+              PortfolioElevatedButton(
+                child: Text(Strings.hireMe, style: TextStyle(color: AppColors.whiteColor,
+                    fontSize: Dimens.fontSize14)),
+                onPressed: () =>
+                    ScrollManager.scrollTo(ScrollManager.contactKey),
+              ),
+            ],
           ),
         ],
       ),

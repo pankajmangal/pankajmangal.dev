@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pankaj_portfolio/core/utils/dimens.dart';
 import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/download_cv_button_widget.dart';
 import 'package:pankaj_portfolio/sections/hero/widgets/hero_description_widget.dart';
@@ -27,9 +28,15 @@ class HeroDesktopLayout extends StatelessWidget {
                 children: [
                   OpenToWorkBadge(),
                   const SizedBox(height: 8),
-                  HeroHeadingWidget(),
+                  HeroHeadingWidget(fontSize: Dimens.fontSize64,
+                    fontWeight: FontWeight.w700,
+                    textAlign: TextAlign.start,),
                   const SizedBox(height: 30),
-                  HeroDescriptionWidget(),
+                  HeroDescriptionWidget(
+                    fontSize: Dimens.fontSize18,
+                    fontWeight: FontWeight.w400,
+                    textAlign: TextAlign.start,
+                  ),
                   const SizedBox(height: 30),
                   Wrap(
                     alignment: WrapAlignment.start,

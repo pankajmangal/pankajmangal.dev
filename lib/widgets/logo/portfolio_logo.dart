@@ -6,8 +6,11 @@ import 'package:pankaj_portfolio/core/utils/scroll_controller.dart';
 import 'package:pankaj_portfolio/widgets/gradients/gradient_text.dart';
 
 class PortfolioLogo extends StatelessWidget {
-  const PortfolioLogo({super.key, this.textHeadingColor = AppColors.heading});
+  const PortfolioLogo({super.key, this.textHeadingColor = AppColors.heading,
+    this.fontSize = Dimens.fontSize16, this.fontWeight = FontWeight.w500});
   final Color textHeadingColor;
+  final double fontSize;
+  final FontWeight fontWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +23,14 @@ class PortfolioLogo extends StatelessWidget {
               text: '<',
               style: GoogleFonts.inter(
                 color: textHeadingColor,
-                fontSize: Dimens.fontSize16,
-                fontWeight: FontWeight.w500,
+                fontSize: fontSize,
+                fontWeight: fontWeight,
               ),
             ),
             WidgetSpan(
               child: GradientText(
                 text: 'pankaj',
-                fontSize: Dimens.fontSize16,
+                fontSize: fontSize,
                 fontWeight: FontWeight.w700,
                 letterSpacing: -0.3,
               ),
@@ -38,8 +41,8 @@ class PortfolioLogo extends StatelessWidget {
               text: '.dev />',
               style: GoogleFonts.inter(
                 color: textHeadingColor,
-                fontSize: Dimens.fontSize16,
-                fontWeight: FontWeight.w500,
+                fontSize: fontSize,
+                fontWeight: fontWeight,
               ),
             ),
           ],

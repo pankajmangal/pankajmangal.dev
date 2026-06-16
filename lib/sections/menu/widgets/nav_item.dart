@@ -45,8 +45,8 @@ class _NavItemState extends State<NavItem> {
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 250),
               padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 10,
+                horizontal: 12,
+                vertical: 8,
               ),
               decoration: BoxDecoration(
                 color: isActive
@@ -54,7 +54,7 @@ class _NavItemState extends State<NavItem> {
                     : isHovered
                     ? AppColors.primary.withValues(alpha: 0.05)
                     : Colors.transparent,
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(24),
               ),
               child: AnimatedDefaultTextStyle(
                 duration: const Duration(milliseconds: 200),
